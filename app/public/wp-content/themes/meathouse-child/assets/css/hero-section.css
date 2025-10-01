@@ -1,0 +1,214 @@
+/**
+ * Hero Section Styles
+ *
+ * @package MeatHouse Child
+ */
+
+/* Hero Section Container */
+.meathouse-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--dark, #000000);
+}
+
+/* Background Video */
+.meathouse-hero-section .elementor-background-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.meathouse-hero-section .hero-background-video,
+.meathouse-hero-section .elementor-background-video-hosted {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Background Image */
+.meathouse-hero-section .hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* Overlay */
+.meathouse-hero-section .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Content Container */
+.meathouse-hero-section .elementor-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Columns */
+.meathouse-hero-section .elementor-column {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.meathouse-hero-section .hero-content-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meathouse-hero-section .elementor-widget-wrap {
+    width: 100%;
+}
+
+/* Title Styling */
+.meathouse-hero-section .elementor-heading-title {
+    color: var(--light, #ffffff);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    text-align: left;
+}
+
+.meathouse-hero-section .elementor-heading-title a {
+    color: var(--light, #ffffff);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.meathouse-hero-section .elementor-heading-title a:hover {
+    color: var(--secondary, #a3714e);
+}
+
+/* Description Styling */
+.meathouse-hero-section .hero-description-text {
+    color: var(--light, #ffffff);
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+    text-align: left;
+}
+
+/* Button Styling */
+.meathouse-hero-section .elementor-button {
+    display: inline-block;
+    background: var(--main, #0d354f);
+    color: var(--light, #ffffff);
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.meathouse-hero-section .elementor-button:hover {
+    background: var(--secondary, #a3714e);
+    color: var(--light, #ffffff);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.meathouse-hero-section .elementor-button-wrapper {
+    text-align: left;
+}
+
+/* Animation Classes */
+.meathouse-hero-section .animated.fadeInUp {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+    .meathouse-hero-section .elementor-heading-title {
+        font-size: 40px;
+    }
+
+    .meathouse-hero-section .hero-description-text {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .meathouse-hero-section {
+        min-height: 80vh;
+    }
+
+    .meathouse-hero-section .elementor-column {
+        width: 100%;
+        padding: 0;
+    }
+
+    .meathouse-hero-section .elementor-heading-title {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .meathouse-hero-section .hero-description-text {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .meathouse-hero-section .elementor-button-wrapper {
+        text-align: center;
+    }
+
+    /* Hide video on mobile, show background image if available */
+    .meathouse-hero-section .elementor-background-video-container.elementor-hidden-phone {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .meathouse-hero-section .elementor-heading-title {
+        font-size: 28px;
+    }
+
+    .meathouse-hero-section .elementor-button {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+}

@@ -22,3 +22,54 @@ endif;
 add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
 
 // END ENQUEUE PARENT ACTION
+
+/**
+ * ======================================
+ * MeatHouse Child Theme Custom Functions
+ * ======================================
+ */
+
+/**
+ * Enqueue child theme styles and scripts
+ */
+if ( !function_exists( 'meathouse_child_enqueue_styles' ) ):
+    function meathouse_child_enqueue_styles() {
+        $theme   = wp_get_theme( 'MeatHouse' );
+        $version = $theme->get( 'Version' );
+
+        // Enqueue hero section CSS
+        if ( file_exists( get_stylesheet_directory() . '/assets/css/hero-section.css' ) ) {
+            wp_enqueue_style(
+                'meathouse-hero-section-style',
+                get_stylesheet_directory_uri() . '/assets/css/hero-section.css',
+                array( 'chld_thm_cfg_parent' ),
+                $version
+            );
+        }
+
+        // Add more modular CSS files here as needed
+    }
+endif;
+add_action( 'wp_enqueue_scripts', 'meathouse_child_enqueue_styles', 20 );
+
+/**
+ * Include customizer options
+ */
+require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-hero.php';
+
+/**
+ * Include content modification functions
+ */
+require get_stylesheet_directory() . '/inc/extras.php';
+
+/**
+ * Hook into the output buffer to modify content before it's sent to browser
+ */
+add_action( 'init', function() {
+    ob_start( 'meathouse_child_modify_page_content' );
+} );
+
+/**
+ * Also hook into the_content filter as an additional layer
+ */
+add_filter( 'the_content', 'meathouse_child_modify_page_content' );
