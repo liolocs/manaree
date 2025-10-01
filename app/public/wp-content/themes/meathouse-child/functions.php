@@ -34,23 +34,20 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
  */
 if ( !function_exists( 'meathouse_child_enqueue_styles' ) ):
     function meathouse_child_enqueue_styles() {
+        // Dynamically get version number of the parent stylesheet
         $theme   = wp_get_theme( 'MeatHouse' );
         $version = $theme->get( 'Version' );
 
-        // Enqueue hero section CSS
-        if ( file_exists( get_stylesheet_directory() . '/assets/css/hero-section.css' ) ) {
-            wp_enqueue_style(
-                'meathouse-hero-section-style',
-                get_stylesheet_directory_uri() . '/assets/css/hero-section.css',
-                array( 'chld_thm_cfg_parent' ),
-                $version
-            );
-        }
+        // Load the child theme stylesheet
+        wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array(), $version );
+
+        // Load hero section CSS
+        wp_enqueue_style( 'hero-section-style', get_stylesheet_directory_uri() . '/assets/css/hero-section.css', array(), $version );
 
         // Add more modular CSS files here as needed
     }
 endif;
-add_action( 'wp_enqueue_scripts', 'meathouse_child_enqueue_styles', 20 );
+add_action( 'wp_enqueue_scripts', 'meathouse_child_enqueue_styles' );
 
 /**
  * Include customizer options

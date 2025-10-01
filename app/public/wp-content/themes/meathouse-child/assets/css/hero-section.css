@@ -8,7 +8,7 @@
 /* Hero Section Container */
 .hero-section {
     position: relative;
-    height: 100vh;
+    height: 80vh;
     min-height: 600px;
     overflow: hidden;
     display: flex;
@@ -187,7 +187,7 @@
 
     .hero-section {
         min-height: 500px;
-        height: 80vh;
+        height: 50vh;
     }
 
     .hero-section .main-content h1 {
@@ -198,21 +198,12 @@
         font-size: 16px;
     }
 
-    /* Hide video on mobile for better performance */
-    .hero-background-video {
-        display: none;
-    }
-
-    /* Ensure background image is visible on mobile */
-    .hero-background-image {
-        display: block;
-    }
 }
 
 @media (max-width: 480px) {
     .hero-section {
         min-height: 400px;
-        height: 70vh;
+        height: 50vh;
     }
 
     .hero-section .main-content h1 {
