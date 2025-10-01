@@ -1,5 +1,6 @@
 /**
  * Hero Section Styles
+ * Matches the slider section design
  *
  * @package MeatHouse Child
  */
@@ -7,47 +8,41 @@
 /* Hero Section Container */
 .hero-section {
     position: relative;
-    width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 600px;
     overflow: hidden;
-    background-color: var(--dark, #000000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
 }
 
 .hero-container {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Background Video */
-.hero-background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    z-index: 0;
-}
-
-/* Background Image */
+/* Background Media */
+.hero-background-video,
 .hero-background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
+}
+
+.hero-background-video {
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-background-image {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 0;
 }
 
 /* Overlay */
@@ -57,20 +52,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    /* Background opacity is now controlled dynamically via inline styles */
+    z-index: 2;
 }
 
-/* Content Container */
+/* Content */
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-content .main-content {
+.hero-section .main-content {
+    color: white;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
     width: 100%;
 }
 
@@ -78,53 +80,92 @@
     text-align: center;
 }
 
-/* Title Styling */
-.hero-section h1 {
-    color: var(--light, #ffffff);
-    font-size: 48px;
+/* Typography */
+.hero-section .main-content h1 {
+    font-size: 45px;
+    margin-bottom: 16px;
+    color: white;
     font-weight: 700;
     line-height: 1.2;
-    margin: 0 0 20px 0;
 }
 
-.hero-section h1 a {
-    color: var(--light, #ffffff);
+.hero-section .main-content h1 a {
+    color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.hero-section h1 a:hover {
+.hero-section .main-content h1 a:hover {
     color: var(--secondary, #a3714e);
 }
 
 /* Description Styling */
 .hero-description {
-    color: var(--light, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
     font-size: 18px;
     line-height: 1.6;
-    margin: 0 0 30px 0;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+    white-space: initial !important;
+    overflow: auto !important;
+    text-overflow: initial !important;
 }
 
 .hero-description span {
     display: inline-block;
 }
 
+.hero-description em {
+    color: white !important;
+}
+
+@media (min-width: 768px) {
+    .hero-description {
+        flex-direction: row;
+        gap: 1em;
+    }
+}
+
 /* Button Styling */
 .hero-section .btn {
-    display: inline-block;
-    padding: 15px 40px;
-    font-size: 16px;
-    font-weight: 600;
+    background-color: var(--bs-primary, var(--main, #0d354f));
+    color: var(--bs-secondary, var(--light, #ffffff));
     text-decoration: none;
-    border-radius: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 0;
+    border: 2px solid var(--bs-primary, var(--main, #0d354f));
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
 }
 
-.hero-section .btn-primary {
-    background: var(--main, #0d354f);
-    color: var(--light, #ffffff);
+.hero-section .btn:not(.btn-play) {
+    margin: 0 !important;
+}
+
+.hero-section .btn::before {
+    padding-top: 18px !important;
+}
+
+.hero-section .btn {
+    padding: 18px 25px !important;
+    font-size: 18px !important;
+}
+
+@media (min-width: 768px) {
+    .hero-section .btn::before {
+        height: 51% !important;
+    }
 }
 
 .hero-section .btn-primary:hover {
@@ -139,28 +180,22 @@
 }
 
 /* Responsive Design */
-@media only screen and (max-width: 1024px) {
-    .hero-section h1 {
-        font-size: 40px;
+@media (max-width: 768px) {
+    .hero-container {
+        padding-top: 120px !important;
+    }
+
+    .hero-section {
+        min-height: 500px;
+        height: 80vh;
+    }
+
+    .hero-section .main-content h1 {
+        font-size: 36px;
     }
 
     .hero-description {
         font-size: 16px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .hero-section,
-    .hero-container {
-        min-height: 80vh;
-    }
-
-    .hero-section h1 {
-        font-size: 32px;
-    }
-
-    .hero-description {
-        font-size: 14px;
     }
 
     /* Hide video on mobile for better performance */
@@ -174,13 +209,52 @@
     }
 }
 
-@media only screen and (max-width: 480px) {
-    .hero-section h1 {
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 400px;
+        height: 70vh;
+    }
+
+    .hero-section .main-content h1 {
         font-size: 28px;
     }
 
-    .hero-section .btn {
-        padding: 12px 30px;
+    .hero-description {
         font-size: 14px;
+    }
+
+    .hero-section .main-content {
+        padding: 0 15px;
+    }
+
+    .hero-section .btn {
+        padding: 12px 25px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* Animation effects */
+.hero-section .main-content > * {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-section .main-content h1 {
+    animation-delay: 0.3s;
+}
+
+.hero-section .hero-description {
+    animation-delay: 0.4s;
+}
+
+.hero-section .btn {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
