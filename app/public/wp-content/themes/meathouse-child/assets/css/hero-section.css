@@ -5,30 +5,26 @@
  */
 
 /* Hero Section Container */
-.meathouse-hero-section {
+.hero-section {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
     background-color: var(--dark, #000000);
 }
 
-/* Background Video */
-.meathouse-hero-section .elementor-background-video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+.hero-container {
+    position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    z-index: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.meathouse-hero-section .hero-background-video,
-.meathouse-hero-section .elementor-background-video-hosted {
+/* Background Video */
+.hero-background-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -38,10 +34,11 @@
     width: auto;
     height: auto;
     object-fit: cover;
+    z-index: 0;
 }
 
 /* Background Image */
-.meathouse-hero-section .hero-background-image {
+.hero-background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,7 +51,7 @@
 }
 
 /* Overlay */
-.meathouse-hero-section .hero-overlay {
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -64,67 +61,57 @@
 }
 
 /* Content Container */
-.meathouse-hero-section .elementor-container {
+.hero-content {
     position: relative;
     z-index: 2;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
-/* Columns */
-.meathouse-hero-section .elementor-column {
-    width: 50%;
-    padding: 0 15px;
-}
-
-.meathouse-hero-section .hero-content-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.meathouse-hero-section .elementor-widget-wrap {
+.hero-content .main-content {
     width: 100%;
 }
 
+.hero-content .text-center {
+    text-align: center;
+}
+
 /* Title Styling */
-.meathouse-hero-section .elementor-heading-title {
+.hero-section h1 {
     color: var(--light, #ffffff);
     font-size: 48px;
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 20px 0;
-    text-align: left;
 }
 
-.meathouse-hero-section .elementor-heading-title a {
+.hero-section h1 a {
     color: var(--light, #ffffff);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.meathouse-hero-section .elementor-heading-title a:hover {
+.hero-section h1 a:hover {
     color: var(--secondary, #a3714e);
 }
 
 /* Description Styling */
-.meathouse-hero-section .hero-description-text {
+.hero-description {
     color: var(--light, #ffffff);
     font-size: 18px;
     line-height: 1.6;
     margin: 0 0 30px 0;
-    text-align: left;
+}
+
+.hero-description span {
+    display: inline-block;
 }
 
 /* Button Styling */
-.meathouse-hero-section .elementor-button {
+.hero-section .btn {
     display: inline-block;
-    background: var(--main, #0d354f);
-    color: var(--light, #ffffff);
     padding: 15px 40px;
     font-size: 16px;
     font-weight: 600;
@@ -132,82 +119,67 @@
     border-radius: 4px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 
-.meathouse-hero-section .elementor-button:hover {
+.hero-section .btn-primary {
+    background: var(--main, #0d354f);
+    color: var(--light, #ffffff);
+}
+
+.hero-section .btn-primary:hover {
     background: var(--secondary, #a3714e);
     color: var(--light, #ffffff);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.meathouse-hero-section .elementor-button-wrapper {
-    text-align: left;
-}
-
-/* Animation Classes */
-.meathouse-hero-section .animated.fadeInUp {
-    animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-section .btn span {
+    display: inline-block;
 }
 
 /* Responsive Design */
 @media only screen and (max-width: 1024px) {
-    .meathouse-hero-section .elementor-heading-title {
+    .hero-section h1 {
         font-size: 40px;
     }
 
-    .meathouse-hero-section .hero-description-text {
+    .hero-description {
         font-size: 16px;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .meathouse-hero-section {
+    .hero-section,
+    .hero-container {
         min-height: 80vh;
     }
 
-    .meathouse-hero-section .elementor-column {
-        width: 100%;
-        padding: 0;
-    }
-
-    .meathouse-hero-section .elementor-heading-title {
+    .hero-section h1 {
         font-size: 32px;
-        text-align: center;
     }
 
-    .meathouse-hero-section .hero-description-text {
+    .hero-description {
         font-size: 14px;
-        text-align: center;
     }
 
-    .meathouse-hero-section .elementor-button-wrapper {
-        text-align: center;
+    /* Hide video on mobile for better performance */
+    .hero-background-video {
+        display: none;
     }
 
-    /* Hide video on mobile, show background image if available */
-    .meathouse-hero-section .elementor-background-video-container.elementor-hidden-phone {
-        display: none !important;
+    /* Ensure background image is visible on mobile */
+    .hero-background-image {
+        display: block;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    .meathouse-hero-section .elementor-heading-title {
+    .hero-section h1 {
         font-size: 28px;
     }
 
-    .meathouse-hero-section .elementor-button {
+    .hero-section .btn {
         padding: 12px 30px;
         font-size: 14px;
     }

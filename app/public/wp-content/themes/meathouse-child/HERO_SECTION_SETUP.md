@@ -77,9 +77,27 @@ This element will be automatically replaced with the hero section when the page 
 
 ### 🎨 Styling:
 - Uses MeatHouse theme color variables (`--main`, `--secondary`, `--light`)
-- Matches Elementor section structure for consistency
+- Clean, custom CSS classes (no Elementor dependencies)
+- Lightweight and optimized structure
 - Responsive breakpoints at 1024px, 767px, and 480px
 - Smooth hover effects on buttons
+
+### 📐 Structure:
+```html
+<section class="hero-section">
+  <div class="hero-container">
+    <video class="hero-background-video">...</video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="main-content text-center">
+        <h1>Title</h1>
+        <div class="hero-description">Description</div>
+        <a class="btn btn-primary">Button</a>
+      </div>
+    </div>
+  </div>
+</section>
+```
 
 ## Example Configuration
 
@@ -180,10 +198,11 @@ For issues or questions, refer to:
 
 ---
 
-**Version**: 1.1
+**Version**: 1.2
 **Last Updated**: 2025-10-01
 **Author**: MeatHouse Child Theme
 
 **Changelog**:
+- v1.2: Removed Elementor classes, using clean custom CSS structure
 - v1.1: Changed from `[section-hero]` shortcode to element ID replacement (`id="_section-hero"`)
 - v1.0: Initial release
