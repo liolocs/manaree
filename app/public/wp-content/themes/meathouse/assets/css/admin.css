@@ -1,0 +1,19 @@
+#toplevel_page_variation-swatches-settings {
+    display: none;
+}
+.updated.woocommerce-message:not(.wc-connect) , .fw-brz-dismiss {
+    display: none;
+}
+td[data-export-label="Overrides"] , td[data-export-label="Overrides"] + td , td[data-export-label="Overrides"] + td  + td {
+    display: none;
+}
+td[data-export-label="Outdated Templates"] , td[data-export-label="Outdated Templates"] + td , td[data-export-label="Outdated Templates"] + td  + td {
+    display: none;
+}
+.elementor-control-_jws_custom_css {
+    display: none;
+}
+
+.elementor-panel .elementor-tab-control-jws_custom_tab a:before {
+      content: "\e916";  
+}

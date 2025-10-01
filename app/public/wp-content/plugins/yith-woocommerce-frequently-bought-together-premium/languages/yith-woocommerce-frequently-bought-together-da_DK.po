@@ -1,0 +1,690 @@
+# Translation of YITH WooCommerce Frequently Bought Together in Danish
+# This file is distributed under the same license as the YITH WooCommerce Frequently Bought Together package.
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH WooCommerce Frequently Bought Together\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
+"frequently-bought-together.premium\n"
+"POT-Creation-Date: 2024-03-19 12:28:55+00:00\n"
+"PO-Revision-Date: 2020-04-16 12:40:36+0000\n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:41
+msgid "Product"
+msgstr ""
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:42
+msgid "Linked products"
+msgstr ""
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:43
+msgid "Actions"
+msgstr ""
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:74
+msgid "Edit product"
+msgstr ""
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:100
+#: includes/admin-tables/class.yith-wfbt-products-table.php:126
+msgid "Delete"
+msgstr ""
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:246
+msgid "No items found."
+msgstr ""
+
+#: includes/class.yith-wfbt-admin.php:184
+msgid "Settings"
+msgstr "Indstillinger"
+
+#: includes/class.yith-wfbt-admin.php:185
+msgid "Label & Style"
+msgstr ""
+
+#: includes/class.yith-wfbt-admin.php:186
+#: includes/compatibility/yith-woocommerce-product-vendors.php:138
+msgid "Linked Products"
+msgstr ""
+
+#: includes/class.yith-wfbt-admin.php:190
+msgid "Slider in Wishlist"
+msgstr ""
+
+#: includes/class.yith-wfbt-admin.php:311
+msgid "Hard Crop?"
+msgstr ""
+
+#. translators: %s stand for WooCommerce settings page.
+#: includes/class.yith-wfbt-admin.php:840
+msgid ""
+"You must enable coupons in order to use the plugin discount feature. Please "
+"enable it <a href=\"%s\">here.</a>"
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:240
+msgid ""
+"Sorry, no products matched your selection. Please choose a different "
+"combination."
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:241
+msgid ""
+"Please select some product options before adding this product to your cart."
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:242
+msgid ""
+"Sorry, this product is unavailable. Please choose a different combination."
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:557
+#: includes/class.yith-wfbt-frontend.php:807
+#: plugin-options/general-options.php:23
+msgid "Frequently Bought Together"
+msgstr "Ofte købt sammen med"
+
+#: includes/class.yith-wfbt-frontend.php:587
+#: includes/class.yith-wfbt-frontend.php:813
+#: plugin-options/label-style-options.php:87
+msgid "View options >"
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:833
+#: plugin-options/label-style-options.php:55
+msgid "Add to Cart"
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:833
+#: plugin-options/label-style-options.php:23
+msgid "Price"
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:836
+#: plugin-options/label-style-options.php:63
+msgid "Add both to Cart"
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:836
+#: plugin-options/label-style-options.php:31
+msgid "Price for both"
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:839
+#: plugin-options/label-style-options.php:71
+msgid "Add all three to Cart"
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:839
+#: plugin-options/label-style-options.php:39
+msgid "Price for all three"
+msgstr ""
+
+#: includes/class.yith-wfbt-frontend.php:842
+#: plugin-options/label-style-options.php:79
+msgid "Add all to Cart"
+msgstr "Tilføj alle til kurv"
+
+#: includes/class.yith-wfbt-frontend.php:842
+#: plugin-options/label-style-options.php:47
+msgid "Price for all"
+msgstr "Pris for alle"
+
+#: includes/class.yith-wfbt-frontend.php:895
+msgid "Close"
+msgstr ""
+
+#: includes/class.yith-wfbt.php:356 includes/class.yith-wfbt.php:414
+#: includes/class.yith-wfbt.php:467
+msgid "Frequently Bought Together Data"
+msgstr ""
+
+#. translators: %s: TODO: short description.
+#: includes/functions.yith-wfbt.php:154
+msgid ""
+"Spend at least %1$s for %2$s or more products of this group and get a %3$s "
+"off."
+msgstr ""
+
+#. translators: %s: TODO: short description.
+#: includes/functions.yith-wfbt.php:157
+msgid "Purchase %1$s or more products and get a %2$s off."
+msgstr ""
+
+#: init.php:37
+msgid ""
+"YITH WooCommerce Frequently Bought Together Premium is enabled but not "
+"effective. It requires WooCommerce in order to work."
+msgstr ""
+
+#: plugin-options/general-options.php:12
+msgid "General Options"
+msgstr "Generelle indstillinger"
+
+#: plugin-options/general-options.php:19
+msgid "Box title"
+msgstr "Boks titel"
+
+#: plugin-options/general-options.php:20
+msgid "Title shown on \"Frequently Bought Together\" box."
+msgstr "Titel vist over \"Ofte købt sammen\"-boks"
+
+#: plugin-options/general-options.php:27
+msgid "Image Size"
+msgstr ""
+
+#. translators: %s is used for print the link to a suggest plugin.
+#: plugin-options/general-options.php:29
+msgid "Set image size (px). After changing these settings you may need to %s."
+msgstr ""
+
+#: plugin-options/general-options.php:29
+msgid "regenerate your thumbnails"
+msgstr ""
+
+#: plugin-options/general-options.php:39
+msgid "Redirect to checkout"
+msgstr ""
+
+#: plugin-options/general-options.php:40
+msgid "Redirect to checkout page after add to cart action."
+msgstr ""
+
+#: plugin-options/general-options.php:47
+msgid "Discount name"
+msgstr ""
+
+#: plugin-options/general-options.php:48
+msgid ""
+"Choose the discount name to use. This name will be visible in cart and "
+"checkout pages."
+msgstr ""
+
+#: plugin-options/general-options.php:55
+msgid "Highlight discount"
+msgstr ""
+
+#: plugin-options/general-options.php:56
+msgid "Show the discount amount in the Frequently Bought Together box."
+msgstr ""
+
+#: plugin-options/general-options.php:63
+msgid "Select box position"
+msgstr ""
+
+#: plugin-options/general-options.php:68
+msgid "Below product summary"
+msgstr ""
+
+#: plugin-options/general-options.php:69
+msgid "Above product tabs"
+msgstr ""
+
+#: plugin-options/general-options.php:70
+msgid "Below product tabs"
+msgstr ""
+
+#: plugin-options/general-options.php:71
+msgid "Use shortcode [ywfbt_form product_id=\"\"]"
+msgstr ""
+
+#: plugin-options/general-options.php:72
+msgid "Above product meta"
+msgstr ""
+
+#: plugin-options/general-options.php:78
+msgid "Loader Image"
+msgstr ""
+
+#: plugin-options/general-options.php:79
+msgid "Upload a custom loading image."
+msgstr ""
+
+#: plugin-options/general-options.php:93
+msgid "WPML Options"
+msgstr ""
+
+#: plugin-options/general-options.php:99
+msgid "WPML Associated Products"
+msgstr ""
+
+#: plugin-options/general-options.php:102
+msgid ""
+"Inherit \"frequently bought together\" products from original language "
+"products."
+msgstr ""
+
+#: plugin-options/general-options.php:114
+msgid "YITH WooCommerce Multi Vendor Options"
+msgstr ""
+
+#: plugin-options/general-options.php:120
+msgid "Vendor Products"
+msgstr ""
+
+#: plugin-options/general-options.php:123
+msgid ""
+"Allow vendor also add products of other vendors to frequently bought form."
+msgstr ""
+
+#: plugin-options/label-style-options.php:12
+msgid "Label and Style Options"
+msgstr ""
+
+#: plugin-options/label-style-options.php:19
+msgid "Total label for single product"
+msgstr ""
+
+#: plugin-options/label-style-options.php:20
+msgid ""
+"This is the text shown for total price label when only one product has been "
+"checked."
+msgstr ""
+
+#: plugin-options/label-style-options.php:27
+msgid "Total label for double products"
+msgstr ""
+
+#: plugin-options/label-style-options.php:28
+msgid ""
+"This is the text shown for total price label when two products have been "
+"checked."
+msgstr ""
+
+#: plugin-options/label-style-options.php:35
+msgid "Total label for three products"
+msgstr ""
+
+#: plugin-options/label-style-options.php:36
+msgid ""
+"This is the text shown for total price label when three products have been "
+"checked."
+msgstr ""
+
+#: plugin-options/label-style-options.php:43
+msgid "Total label for multiple products"
+msgstr ""
+
+#: plugin-options/label-style-options.php:44
+msgid ""
+"This is the label shown for total price label when more than three products "
+"have been checked."
+msgstr ""
+
+#: plugin-options/label-style-options.php:51
+msgid "Button label for single product"
+msgstr ""
+
+#: plugin-options/label-style-options.php:52
+msgid ""
+"This is the label shown for \"Add to cart\" button when only one product has "
+"been checked."
+msgstr ""
+
+#: plugin-options/label-style-options.php:59
+msgid "Button label for two products"
+msgstr ""
+
+#: plugin-options/label-style-options.php:60
+msgid ""
+"This is the label shown for \"Add to cart\" button when two products have "
+"been checked."
+msgstr ""
+
+#: plugin-options/label-style-options.php:67
+msgid "Button label for three products"
+msgstr ""
+
+#: plugin-options/label-style-options.php:68
+msgid ""
+"This is the label shown for \"Add to cart\" button when three products have "
+"been checked."
+msgstr ""
+
+#: plugin-options/label-style-options.php:75
+msgid "Button label for multiple products"
+msgstr ""
+
+#: plugin-options/label-style-options.php:76
+msgid ""
+"This is the label shown for \"Add to cart\" button when more than two "
+"products have been checked."
+msgstr ""
+
+#: plugin-options/label-style-options.php:83
+msgid "Variation pick button label"
+msgstr ""
+
+#: plugin-options/label-style-options.php:84
+msgid ""
+"This is the text of the button that opens the popup to select the product "
+"variation"
+msgstr ""
+
+#: plugin-options/label-style-options.php:91
+msgid "Popup title"
+msgstr ""
+
+#: plugin-options/label-style-options.php:92
+msgid ""
+"This is the title of the popup where users can select the product variation"
+msgstr ""
+
+#: plugin-options/label-style-options.php:95
+#: templates/yith-wfbt-dialog-variations.php:14
+msgid "Choose the product"
+msgstr ""
+
+#: plugin-options/label-style-options.php:99
+msgid "Popup button label"
+msgstr ""
+
+#: plugin-options/label-style-options.php:100
+msgid "This is the text of the \"Add to cart\" button in the popup"
+msgstr ""
+
+#: plugin-options/label-style-options.php:103
+#: templates/yith-wfbt-dialog-variations.php:15
+msgid "Add product"
+msgstr ""
+
+#: plugin-options/label-style-options.php:107
+msgid "Form Background Color"
+msgstr ""
+
+#: plugin-options/label-style-options.php:108
+msgid "Select background color for Frequently Bought form"
+msgstr ""
+
+#: plugin-options/label-style-options.php:115
+msgid "Button Color"
+msgstr "Knap farve"
+
+#: plugin-options/label-style-options.php:116
+msgid "Select button background color"
+msgstr "Vælg baggrundsfarve på knappen"
+
+#: plugin-options/label-style-options.php:123
+msgid "Button Hover Color"
+msgstr "Knapfarve ved hover"
+
+#: plugin-options/label-style-options.php:124
+msgid "Select button background hover color"
+msgstr "Vælg baggrundsfarve for knappen ved hover"
+
+#: plugin-options/label-style-options.php:131
+msgid "Button Text Color"
+msgstr "Knappens tekstfarve"
+
+#: plugin-options/label-style-options.php:132
+msgid "Select button text color"
+msgstr "Vælg knappens tekstfarve"
+
+#: plugin-options/label-style-options.php:139
+msgid "Button Text Hover Color"
+msgstr "Knappens tekstfarve ved hover"
+
+#: plugin-options/label-style-options.php:140
+msgid "Select button text hover color"
+msgstr "Vælg knappens tekstfarve ved hover"
+
+#: plugin-options/product-data-options.php:14
+msgid "Select default variation"
+msgstr ""
+
+#: plugin-options/product-data-options.php:21
+msgid "Products type"
+msgstr ""
+
+#: plugin-options/product-data-options.php:22
+msgid "Choose which products you want to use as frequently bought products"
+msgstr ""
+
+#: plugin-options/product-data-options.php:25
+msgid "Use related"
+msgstr ""
+
+#: plugin-options/product-data-options.php:26
+msgid "Use cross-sells"
+msgstr ""
+
+#: plugin-options/product-data-options.php:27
+msgid "Use up-sells"
+msgstr ""
+
+#: plugin-options/product-data-options.php:28
+msgid "Custom products"
+msgstr ""
+
+#: plugin-options/product-data-options.php:34
+msgid "Select products"
+msgstr "Vælg produkter"
+
+#: plugin-options/product-data-options.php:35
+msgid "Select products for \"Frequently bought together\" group"
+msgstr "Vælg produkter til \"Ofte købt sammen\"-gruppe"
+
+#: plugin-options/product-data-options.php:44
+msgid "Show"
+msgstr ""
+
+#: plugin-options/product-data-options.php:45
+msgid ""
+"Choose whether to show all products or set a limited number of products that "
+"will show randomly"
+msgstr ""
+
+#: plugin-options/product-data-options.php:48
+msgid "All selected products"
+msgstr ""
+
+#: plugin-options/product-data-options.php:49
+msgid "Show randomly a limited number of products"
+msgstr ""
+
+#: plugin-options/product-data-options.php:54
+msgid "Number of products to show randomly"
+msgstr ""
+
+#: plugin-options/product-data-options.php:55
+msgid ""
+"Set how many products to show excluding current one for \"Frequently bought "
+"together\" group"
+msgstr ""
+
+#: plugin-options/product-data-options.php:67
+msgid "Show products unchecked"
+msgstr ""
+
+#: plugin-options/product-data-options.php:68
+msgid "Show all products in group unchecked."
+msgstr ""
+
+#: plugin-options/product-data-options.php:73
+msgid "Set additional text"
+msgstr ""
+
+#: plugin-options/product-data-options.php:74
+msgid "Set additional text to show before products"
+msgstr ""
+
+#: plugin-options/product-data-options.php:79
+msgid "Apply a discount on linked products"
+msgstr ""
+
+#: plugin-options/product-data-options.php:85
+msgid "Discount type"
+msgstr ""
+
+#: plugin-options/product-data-options.php:88
+msgid "Fixed amount"
+msgstr ""
+
+#: plugin-options/product-data-options.php:89
+msgid "Percentage"
+msgstr ""
+
+#: plugin-options/product-data-options.php:98
+msgid "Discount amount"
+msgstr ""
+
+#: plugin-options/product-data-options.php:109
+msgid "Discount percentage"
+msgstr ""
+
+#: plugin-options/product-data-options.php:124
+msgid "Apply conditions to discount"
+msgstr ""
+
+#: plugin-options/product-data-options.php:134
+msgid "Apply discount only if the user spend at least"
+msgstr ""
+
+#: plugin-options/product-data-options.php:145
+msgid "Apply discount only if the user choose at least"
+msgstr ""
+
+#: plugin-options/slider-options.php:12
+msgid "Slider Options"
+msgstr ""
+
+#: plugin-options/slider-options.php:19
+msgid "Slider Title"
+msgstr ""
+
+#: plugin-options/slider-options.php:20
+msgid "Give a title to the slider with products"
+msgstr ""
+
+#: plugin-options/slider-options.php:23 templates/yith-wfbt-shortcode.php:23
+msgid "Customers who bought the items in your wishlist also purchased"
+msgstr ""
+
+#: plugin-options/slider-options.php:27
+msgid "Number of products"
+msgstr ""
+
+#: plugin-options/slider-options.php:28
+msgid ""
+"Choose the maximum number of products displayed at a time when the browser "
+"is used with its widest width."
+msgstr ""
+
+#: plugin-options/slider-options.php:36
+msgid "\"Add to cart\" button label"
+msgstr ""
+
+#: plugin-options/slider-options.php:37
+msgid "Choose the label for \"Add to cart\" button."
+msgstr ""
+
+#: plugin-options/slider-options.php:40 templates/yith-wfbt-shortcode.php:97
+msgid "Add to cart"
+msgstr ""
+
+#: plugin-options/slider-options.php:44
+msgid "\"Wishlist\" button"
+msgstr ""
+
+#: plugin-options/slider-options.php:45
+msgid "Choose the label for \"Wishlist\" button."
+msgstr ""
+
+#: plugin-options/slider-options.php:48 templates/yith-wfbt-shortcode.php:98
+msgid "Add to Wishlist"
+msgstr ""
+
+#: plugin-options/slider-options.php:52
+msgid "Select product content"
+msgstr ""
+
+#: plugin-options/slider-options.php:53
+msgid "Product Image"
+msgstr ""
+
+#: plugin-options/slider-options.php:60
+msgid "Product Name"
+msgstr ""
+
+#: plugin-options/slider-options.php:67
+msgid "Product Price"
+msgstr ""
+
+#: plugin-options/slider-options.php:74
+msgid "Product Variation"
+msgstr ""
+
+#: plugin-options/slider-options.php:81
+msgid "Product Rating"
+msgstr ""
+
+#: templates/admin/data-table.php:17
+msgid "Select at least one product that has to be removed."
+msgstr ""
+
+#: templates/admin/data-table.php:20
+msgid "Selected products have been removed."
+msgstr ""
+
+#: templates/admin/data-table.php:52
+msgid "Search Product"
+msgstr ""
+
+#: templates/admin/product-panel.php:98
+msgid "Search for a product&hellip;"
+msgstr "Søg efter produkter"
+
+#. translators: %s stand for the amount saved with the discount.
+#: templates/yith-wfbt-form.php:123
+msgid "Save %s"
+msgstr ""
+
+#: templates/yith-wfbt-form.php:172
+msgid "This Product"
+msgstr "Dette produkt"
+
+#. Description of the plugin/theme
+msgid ""
+"The <code><strong>YITH WooCommerce Frequently Bought Together</strong></"
+"code> allows increasing the average spent of your store by showing a box "
+"with the products purchased together more frequently. In this way, users are "
+"encouraged to add more products to their cart just like on Amazon. <a "
+"href=\"https://yithemes.com/\" target=\"_blank\">Get more plugins for your e-"
+"commerce shop on <strong>YITH</strong></a>."
+msgstr ""
+
+#: includes/class.yith-wfbt-admin.php:360
+msgctxt "Delete single linked product"
+msgid "Delete"
+msgstr ""
+
+#: includes/class.yith-wfbt-admin.php:394
+msgctxt "tab in product data box"
+msgid "Frequently Bought Together"
+msgstr "Ofte købt sammen med"
+
+#: includes/class.yith-wfbt.php:331
+msgctxt "[gutenberg]: block name"
+msgid "Frequently Bought Form"
+msgstr ""
+
+#: includes/class.yith-wfbt.php:332
+msgctxt "[gutenberg]: block description"
+msgid ""
+"With this block you can print a product \"frequently bought together\" form."
+msgstr ""
+
+#: includes/class.yith-wfbt.php:338
+msgctxt "[gutenberg]: attributes description"
+msgid "Add the product id (leave blank to get global product value)"
+msgstr ""
+
+#: plugin-options/product-data-options.php:146
+msgctxt "Inline input label for admin option"
+msgid "products"
+msgstr ""

@@ -1,0 +1,30 @@
+.elementor-widget-jws_widget_heading {
+    .title-wrapper {
+        &.title-cross {
+            position:relative;
+            &:after {
+                content:"";
+                height: 2px;
+                width: 100vw;
+                position: absolute;
+                bottom: 0;
+                background: var(--main);
+            }
+            &.right {
+                &:after {
+                    right:0;
+                }
+            }
+            &.left {
+                &:after {
+                    left:0;
+                }
+            }
+            &.center {
+                &:after {
+                   width: 100%;
+                }
+            }
+        }
+    }
+}

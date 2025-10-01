@@ -1,0 +1,734 @@
+# Translation of YITH WooCommerce Frequently Bought Together in Swedish
+# This file is distributed under the same license as the YITH WooCommerce Frequently Bought Together package.
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH WooCommerce Frequently Bought Together\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
+"frequently-bought-together.premium\n"
+"POT-Creation-Date: 2024-03-19 12:28:55+00:00\n"
+"PO-Revision-Date: 2021-09-02 10:48:51+0000\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:41
+msgid "Product"
+msgstr "Produkt"
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:42
+msgid "Linked products"
+msgstr "Länkade produkter"
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:43
+msgid "Actions"
+msgstr "Handlingar"
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:74
+msgid "Edit product"
+msgstr "Redigera produkt"
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:100
+#: includes/admin-tables/class.yith-wfbt-products-table.php:126
+msgid "Delete"
+msgstr "Radera"
+
+#: includes/admin-tables/class.yith-wfbt-products-table.php:246
+msgid "No items found."
+msgstr "Inga objekt hittades."
+
+#: includes/class.yith-wfbt-admin.php:184
+msgid "Settings"
+msgstr "Inställningar"
+
+#: includes/class.yith-wfbt-admin.php:185
+msgid "Label & Style"
+msgstr "Etikett & Stil"
+
+#: includes/class.yith-wfbt-admin.php:186
+#: includes/compatibility/yith-woocommerce-product-vendors.php:138
+msgid "Linked Products"
+msgstr "Länkade produkter"
+
+#: includes/class.yith-wfbt-admin.php:190
+msgid "Slider in Wishlist"
+msgstr "Bildspel i Wishlist"
+
+#: includes/class.yith-wfbt-admin.php:311
+msgid "Hard Crop?"
+msgstr "Hård beskärning?"
+
+#. translators: %s stand for WooCommerce settings page.
+#: includes/class.yith-wfbt-admin.php:840
+msgid ""
+"You must enable coupons in order to use the plugin discount feature. Please "
+"enable it <a href=\"%s\">here.</a>"
+msgstr ""
+"Du måste aktivera kuponger för att kunna använda pluginets rabattfunktion. "
+"Aktivera det <a href=\"%s\">här.</a>"
+
+#: includes/class.yith-wfbt-frontend.php:240
+msgid ""
+"Sorry, no products matched your selection. Please choose a different "
+"combination."
+msgstr "Tyvärr, inga produkter matchade ditt val. Välj en annan kombination."
+
+#: includes/class.yith-wfbt-frontend.php:241
+msgid ""
+"Please select some product options before adding this product to your cart."
+msgstr "Välj produktalternativ innan du lägger till produkten i din kundvagn."
+
+#: includes/class.yith-wfbt-frontend.php:242
+msgid ""
+"Sorry, this product is unavailable. Please choose a different combination."
+msgstr ""
+"Den här produkten är tyvärr inte tillgänglig. Välj en annan kombination."
+
+#: includes/class.yith-wfbt-frontend.php:557
+#: includes/class.yith-wfbt-frontend.php:807
+#: plugin-options/general-options.php:23
+msgid "Frequently Bought Together"
+msgstr "Frequently Bought Together"
+
+#: includes/class.yith-wfbt-frontend.php:587
+#: includes/class.yith-wfbt-frontend.php:813
+#: plugin-options/label-style-options.php:87
+msgid "View options >"
+msgstr "Visa alternativ >"
+
+#: includes/class.yith-wfbt-frontend.php:833
+#: plugin-options/label-style-options.php:55
+msgid "Add to Cart"
+msgstr "Köp"
+
+#: includes/class.yith-wfbt-frontend.php:833
+#: plugin-options/label-style-options.php:23
+msgid "Price"
+msgstr "Pris"
+
+#: includes/class.yith-wfbt-frontend.php:836
+#: plugin-options/label-style-options.php:63
+msgid "Add both to Cart"
+msgstr "Lägg båda i varukorgen"
+
+#: includes/class.yith-wfbt-frontend.php:836
+#: plugin-options/label-style-options.php:31
+msgid "Price for both"
+msgstr "Pris för båda"
+
+#: includes/class.yith-wfbt-frontend.php:839
+#: plugin-options/label-style-options.php:71
+msgid "Add all three to Cart"
+msgstr "Lägg alla tre i varukorgen"
+
+#: includes/class.yith-wfbt-frontend.php:839
+#: plugin-options/label-style-options.php:39
+msgid "Price for all three"
+msgstr "Pris för alla tre"
+
+#: includes/class.yith-wfbt-frontend.php:842
+#: plugin-options/label-style-options.php:79
+msgid "Add all to Cart"
+msgstr "Lägg till allt i varukorgen"
+
+#: includes/class.yith-wfbt-frontend.php:842
+#: plugin-options/label-style-options.php:47
+msgid "Price for all"
+msgstr "Pris för alla"
+
+#: includes/class.yith-wfbt-frontend.php:895
+msgid "Close"
+msgstr "Stäng"
+
+#: includes/class.yith-wfbt.php:356 includes/class.yith-wfbt.php:414
+#: includes/class.yith-wfbt.php:467
+msgid "Frequently Bought Together Data"
+msgstr "Frequently Bought Together-data"
+
+#. translators: %s: TODO: short description.
+#: includes/functions.yith-wfbt.php:154
+msgid ""
+"Spend at least %1$s for %2$s or more products of this group and get a %3$s "
+"off."
+msgstr ""
+
+#. translators: %s: TODO: short description.
+#: includes/functions.yith-wfbt.php:157
+msgid "Purchase %1$s or more products and get a %2$s off."
+msgstr ""
+
+#: init.php:37
+msgid ""
+"YITH WooCommerce Frequently Bought Together Premium is enabled but not "
+"effective. It requires WooCommerce in order to work."
+msgstr ""
+"YITH WooCommerce Frequently Bought Together Premium är aktiverat men inte "
+"gällande. Det kräver WooCommerce för att fungera."
+
+#: plugin-options/general-options.php:12
+msgid "General Options"
+msgstr "Generella alternativ"
+
+#: plugin-options/general-options.php:19
+msgid "Box title"
+msgstr "Titel på rutan"
+
+#: plugin-options/general-options.php:20
+msgid "Title shown on \"Frequently Bought Together\" box."
+msgstr "Titeln som visas i rutan \"Ofta köpta tillsammans\"."
+
+#: plugin-options/general-options.php:27
+msgid "Image Size"
+msgstr "Bildstorlek"
+
+#. translators: %s is used for print the link to a suggest plugin.
+#: plugin-options/general-options.php:29
+msgid "Set image size (px). After changing these settings you may need to %s."
+msgstr ""
+"Ställ in bildstorlek (px). När du har ändrat dessa inställningar kan du "
+"behöva %s."
+
+#: plugin-options/general-options.php:29
+msgid "regenerate your thumbnails"
+msgstr "återskapa dina miniatyrbilder"
+
+#: plugin-options/general-options.php:39
+msgid "Redirect to checkout"
+msgstr "Omdirigera till kassan"
+
+#: plugin-options/general-options.php:40
+msgid "Redirect to checkout page after add to cart action."
+msgstr "Omdirigera till kassan efter köp har gjorts."
+
+#: plugin-options/general-options.php:47
+msgid "Discount name"
+msgstr "Rabattnamn"
+
+#: plugin-options/general-options.php:48
+msgid ""
+"Choose the discount name to use. This name will be visible in cart and "
+"checkout pages."
+msgstr ""
+"Välj rabattnamnet att använda. Detta namn kommer att synas på sidorna för "
+"varukorg och kassa."
+
+#: plugin-options/general-options.php:55
+msgid "Highlight discount"
+msgstr "Markera rabatt"
+
+#: plugin-options/general-options.php:56
+msgid "Show the discount amount in the Frequently Bought Together box."
+msgstr "Visa rabattbeloppet i rutan Ofta köpt tillsammans."
+
+#: plugin-options/general-options.php:63
+msgid "Select box position"
+msgstr "Välj lådposition"
+
+#: plugin-options/general-options.php:68
+msgid "Below product summary"
+msgstr "Under produktöversikt"
+
+#: plugin-options/general-options.php:69
+msgid "Above product tabs"
+msgstr "Över produkttabs"
+
+#: plugin-options/general-options.php:70
+msgid "Below product tabs"
+msgstr "Under produkttabs"
+
+#: plugin-options/general-options.php:71
+msgid "Use shortcode [ywfbt_form product_id=\"\"]"
+msgstr "Använd shortcode [ywfbt_form product_id=\"\"]"
+
+#: plugin-options/general-options.php:72
+msgid "Above product meta"
+msgstr "Ovan produktmeta"
+
+#: plugin-options/general-options.php:78
+msgid "Loader Image"
+msgstr "Laddningsbild"
+
+#: plugin-options/general-options.php:79
+msgid "Upload a custom loading image."
+msgstr "Ladda upp en anpassad laddningsbild."
+
+#: plugin-options/general-options.php:93
+msgid "WPML Options"
+msgstr "WPM-alternativ"
+
+#: plugin-options/general-options.php:99
+msgid "WPML Associated Products"
+msgstr "WPML-associerade produkter"
+
+#: plugin-options/general-options.php:102
+msgid ""
+"Inherit \"frequently bought together\" products from original language "
+"products."
+msgstr ""
+"Ärv \"ofta köpt tillsammans\"-produkter från produkter i dess ursprungsspråk."
+
+#: plugin-options/general-options.php:114
+msgid "YITH WooCommerce Multi Vendor Options"
+msgstr "YITH WooCommerce Multi Vendor Alternativ"
+
+#: plugin-options/general-options.php:120
+msgid "Vendor Products"
+msgstr "Leverantörsprodukter"
+
+#: plugin-options/general-options.php:123
+msgid ""
+"Allow vendor also add products of other vendors to frequently bought form."
+msgstr ""
+"Låt leverantör också lägga till produkter från andra leverantörer till ofta "
+"köpt-formulär."
+
+#: plugin-options/label-style-options.php:12
+msgid "Label and Style Options"
+msgstr "Etikett- och stilalternativ"
+
+#: plugin-options/label-style-options.php:19
+msgid "Total label for single product"
+msgstr "Text för totalt pris för singelprodukt"
+
+#: plugin-options/label-style-options.php:20
+msgid ""
+"This is the text shown for total price label when only one product has been "
+"checked."
+msgstr ""
+"Detta är texten som visas för totalt pris när endast en produkt har valts."
+
+#: plugin-options/label-style-options.php:27
+msgid "Total label for double products"
+msgstr "Text för totalt pris för dubbla produkter"
+
+#: plugin-options/label-style-options.php:28
+msgid ""
+"This is the text shown for total price label when two products have been "
+"checked."
+msgstr "Detta är texten som visas för totalt pris när två produkter har valts."
+
+#: plugin-options/label-style-options.php:35
+msgid "Total label for three products"
+msgstr "Etikett för tre produkter"
+
+#: plugin-options/label-style-options.php:36
+msgid ""
+"This is the text shown for total price label when three products have been "
+"checked."
+msgstr "Detta är texten som visas för totalt pris när tre produkter har valts."
+
+#: plugin-options/label-style-options.php:43
+msgid "Total label for multiple products"
+msgstr "Etikett för \"totalt\", när flera produkter har valts"
+
+#: plugin-options/label-style-options.php:44
+msgid ""
+"This is the label shown for total price label when more than three products "
+"have been checked."
+msgstr ""
+"Detta är etiketten som visas för totala priset när mer än tre produkter har "
+"valts."
+
+#: plugin-options/label-style-options.php:51
+msgid "Button label for single product"
+msgstr "Knapptext för singelprodukt"
+
+#: plugin-options/label-style-options.php:52
+msgid ""
+"This is the label shown for \"Add to cart\" button when only one product has "
+"been checked."
+msgstr "Detta visas på \"Köp\"-knappen när endast en produkt har valts."
+
+#: plugin-options/label-style-options.php:59
+msgid "Button label for two products"
+msgstr "Knapptext för två produkter"
+
+#: plugin-options/label-style-options.php:60
+msgid ""
+"This is the label shown for \"Add to cart\" button when two products have "
+"been checked."
+msgstr ""
+"Detta visas på knappen \"Lägg i varukorg\" när två produkter har valts."
+
+#: plugin-options/label-style-options.php:67
+msgid "Button label for three products"
+msgstr "Knapptext för tre produkter"
+
+#: plugin-options/label-style-options.php:68
+msgid ""
+"This is the label shown for \"Add to cart\" button when three products have "
+"been checked."
+msgstr ""
+"Detta visas på knappen \"Lägg i varukorg\" när tre produkter har valts."
+
+#: plugin-options/label-style-options.php:75
+msgid "Button label for multiple products"
+msgstr "Knapptext för flera produkter"
+
+#: plugin-options/label-style-options.php:76
+msgid ""
+"This is the label shown for \"Add to cart\" button when more than two "
+"products have been checked."
+msgstr ""
+"Detta visas på knappen \"Lägg i varukorg\" när mer än två produkter har "
+"valts."
+
+#: plugin-options/label-style-options.php:83
+msgid "Variation pick button label"
+msgstr "Etikett för val av knapp för variation"
+
+#: plugin-options/label-style-options.php:84
+msgid ""
+"This is the text of the button that opens the popup to select the product "
+"variation"
+msgstr ""
+"Detta är texten på knappen som öppnar popup-fönstret för att välja "
+"produktvariant"
+
+#: plugin-options/label-style-options.php:91
+msgid "Popup title"
+msgstr "Titel på popup-fönster"
+
+#: plugin-options/label-style-options.php:92
+msgid ""
+"This is the title of the popup where users can select the product variation"
+msgstr ""
+"Detta är titeln på popup-fönstret där användaren kan välja produktvariant"
+
+#: plugin-options/label-style-options.php:95
+#: templates/yith-wfbt-dialog-variations.php:14
+msgid "Choose the product"
+msgstr "Välj produkt"
+
+#: plugin-options/label-style-options.php:99
+msgid "Popup button label"
+msgstr "Etikett för popupknapp"
+
+#: plugin-options/label-style-options.php:100
+msgid "This is the text of the \"Add to cart\" button in the popup"
+msgstr "Detta är texten till knappen \"Lägg till i kundvagn\" i popupfönstret"
+
+#: plugin-options/label-style-options.php:103
+#: templates/yith-wfbt-dialog-variations.php:15
+msgid "Add product"
+msgstr "Lägg till produkt"
+
+#: plugin-options/label-style-options.php:107
+msgid "Form Background Color"
+msgstr "Bakgrundsfärg för formuläret"
+
+#: plugin-options/label-style-options.php:108
+msgid "Select background color for Frequently Bought form"
+msgstr "Välj bakgrundsfärg för Ofta köpta tillsammans-formuläret"
+
+#: plugin-options/label-style-options.php:115
+msgid "Button Color"
+msgstr "Knappfärg"
+
+#: plugin-options/label-style-options.php:116
+msgid "Select button background color"
+msgstr "Välj bakgrundsfärg på knappen"
+
+#: plugin-options/label-style-options.php:123
+msgid "Button Hover Color"
+msgstr "Färg på knappen vid hovring"
+
+#: plugin-options/label-style-options.php:124
+msgid "Select button background hover color"
+msgstr "Välj bakgrundsfärg på knappen vid hovring"
+
+#: plugin-options/label-style-options.php:131
+msgid "Button Text Color"
+msgstr "Färg på knappens text"
+
+#: plugin-options/label-style-options.php:132
+msgid "Select button text color"
+msgstr "Välj färg på knappens text"
+
+#: plugin-options/label-style-options.php:139
+msgid "Button Text Hover Color"
+msgstr "Knapptextfärg vid hovring"
+
+#: plugin-options/label-style-options.php:140
+msgid "Select button text hover color"
+msgstr "Välj färg på knappens text vid hovring"
+
+#: plugin-options/product-data-options.php:14
+msgid "Select default variation"
+msgstr "Välj standardvariant"
+
+#: plugin-options/product-data-options.php:21
+msgid "Products type"
+msgstr "Produkttyp"
+
+#: plugin-options/product-data-options.php:22
+msgid "Choose which products you want to use as frequently bought products"
+msgstr "Välj vilka produkter du vill använda som ofta köpta produkter"
+
+#: plugin-options/product-data-options.php:25
+msgid "Use related"
+msgstr "Använd relaterat"
+
+#: plugin-options/product-data-options.php:26
+msgid "Use cross-sells"
+msgstr "Använd korsförsäljning"
+
+#: plugin-options/product-data-options.php:27
+msgid "Use up-sells"
+msgstr "Använd uppförsäljningar"
+
+#: plugin-options/product-data-options.php:28
+msgid "Custom products"
+msgstr "Anpassade produkter"
+
+#: plugin-options/product-data-options.php:34
+msgid "Select products"
+msgstr "Välj produkter"
+
+#: plugin-options/product-data-options.php:35
+msgid "Select products for \"Frequently bought together\" group"
+msgstr "Välj produkter för gruppen \"Ofta köpt tillsammans\""
+
+#: plugin-options/product-data-options.php:44
+msgid "Show"
+msgstr "Visa"
+
+#: plugin-options/product-data-options.php:45
+msgid ""
+"Choose whether to show all products or set a limited number of products that "
+"will show randomly"
+msgstr ""
+"Välj om du vill visa alla produkter eller ange ett begränsat antal produkter "
+"som ska visas slumpmässigt"
+
+#: plugin-options/product-data-options.php:48
+msgid "All selected products"
+msgstr "Alla utvalda produkter"
+
+#: plugin-options/product-data-options.php:49
+msgid "Show randomly a limited number of products"
+msgstr "Visa slumpmässigt ett begränsat antal produkter"
+
+#: plugin-options/product-data-options.php:54
+msgid "Number of products to show randomly"
+msgstr "Antal produkter som ska visas slumpmässigt"
+
+#: plugin-options/product-data-options.php:55
+msgid ""
+"Set how many products to show excluding current one for \"Frequently bought "
+"together\" group"
+msgstr ""
+"Ange hur många produkter som ska visas, exklusive den aktuella produkten för "
+"\"Ofta köpt tillsammans\"-grupperingen."
+
+#: plugin-options/product-data-options.php:67
+msgid "Show products unchecked"
+msgstr "Visa produkter avmarkerade"
+
+#: plugin-options/product-data-options.php:68
+msgid "Show all products in group unchecked."
+msgstr "Visa alla produkter i gruppen avmarkerade."
+
+#: plugin-options/product-data-options.php:73
+msgid "Set additional text"
+msgstr "Ange text"
+
+#: plugin-options/product-data-options.php:74
+msgid "Set additional text to show before products"
+msgstr "Ange text som ska visas före produkter"
+
+#: plugin-options/product-data-options.php:79
+msgid "Apply a discount on linked products"
+msgstr "Tillämpa rabatt på länkade produkter"
+
+#: plugin-options/product-data-options.php:85
+msgid "Discount type"
+msgstr "Rabattyp"
+
+#: plugin-options/product-data-options.php:88
+msgid "Fixed amount"
+msgstr "Fast belopp"
+
+#: plugin-options/product-data-options.php:89
+msgid "Percentage"
+msgstr "Procent"
+
+#: plugin-options/product-data-options.php:98
+msgid "Discount amount"
+msgstr "Rabatt i summa"
+
+#: plugin-options/product-data-options.php:109
+msgid "Discount percentage"
+msgstr "Rabatt i procent"
+
+#: plugin-options/product-data-options.php:124
+msgid "Apply conditions to discount"
+msgstr "Tillämpa villkor för rabatt"
+
+#: plugin-options/product-data-options.php:134
+msgid "Apply discount only if the user spend at least"
+msgstr "Tillämpa rabatt endast om användaren spenderar minst"
+
+#: plugin-options/product-data-options.php:145
+msgid "Apply discount only if the user choose at least"
+msgstr "Tillämpa rabatt endast om användaren väljer minst"
+
+#: plugin-options/slider-options.php:12
+msgid "Slider Options"
+msgstr "Alternativ för reglage"
+
+#: plugin-options/slider-options.php:19
+msgid "Slider Title"
+msgstr "Namn för reglage"
+
+#: plugin-options/slider-options.php:20
+msgid "Give a title to the slider with products"
+msgstr "Ge en titel till reglaget med produkter"
+
+#: plugin-options/slider-options.php:23 templates/yith-wfbt-shortcode.php:23
+msgid "Customers who bought the items in your wishlist also purchased"
+msgstr "Kunder som köpte produkterna i din önskelista köpte också"
+
+#: plugin-options/slider-options.php:27
+msgid "Number of products"
+msgstr "Antal produkter"
+
+#: plugin-options/slider-options.php:28
+msgid ""
+"Choose the maximum number of products displayed at a time when the browser "
+"is used with its widest width."
+msgstr ""
+"Välj det maximala antalet produkter som visas när webbläsaren används med "
+"full bredd."
+
+#: plugin-options/slider-options.php:36
+msgid "\"Add to cart\" button label"
+msgstr "Etikett för \"Lägg till i varukorg\"-knapp"
+
+#: plugin-options/slider-options.php:37
+msgid "Choose the label for \"Add to cart\" button."
+msgstr "Välj etikett för knappen \"Lägg i varukorg\"."
+
+#: plugin-options/slider-options.php:40 templates/yith-wfbt-shortcode.php:97
+msgid "Add to cart"
+msgstr "Lägg i varukorg"
+
+#: plugin-options/slider-options.php:44
+msgid "\"Wishlist\" button"
+msgstr "\"Önskelista\"-knapp"
+
+#: plugin-options/slider-options.php:45
+msgid "Choose the label for \"Wishlist\" button."
+msgstr "Välj etiketten för knappen \"Önskelista\"."
+
+#: plugin-options/slider-options.php:48 templates/yith-wfbt-shortcode.php:98
+msgid "Add to Wishlist"
+msgstr "Lägg till i önskelistan"
+
+#: plugin-options/slider-options.php:52
+msgid "Select product content"
+msgstr "Välj produktinnehåll"
+
+#: plugin-options/slider-options.php:53
+msgid "Product Image"
+msgstr "Produktbild"
+
+#: plugin-options/slider-options.php:60
+msgid "Product Name"
+msgstr "Produktnamn"
+
+#: plugin-options/slider-options.php:67
+msgid "Product Price"
+msgstr "Produktpris"
+
+#: plugin-options/slider-options.php:74
+msgid "Product Variation"
+msgstr "Produktvariation"
+
+#: plugin-options/slider-options.php:81
+msgid "Product Rating"
+msgstr "Produktbetyg"
+
+#: templates/admin/data-table.php:17
+msgid "Select at least one product that has to be removed."
+msgstr "Välj minst en produkt som måste tas bort."
+
+#: templates/admin/data-table.php:20
+msgid "Selected products have been removed."
+msgstr "Utvalda produkter har tagits bort."
+
+#: templates/admin/data-table.php:52
+msgid "Search Product"
+msgstr "Sök produkt"
+
+#: templates/admin/product-panel.php:98
+msgid "Search for a product&hellip;"
+msgstr "Sök efter en produkt&hellip;"
+
+#. translators: %s stand for the amount saved with the discount.
+#: templates/yith-wfbt-form.php:123
+msgid "Save %s"
+msgstr "Spara %s"
+
+#: templates/yith-wfbt-form.php:172
+msgid "This Product"
+msgstr "Denna produkt"
+
+#. Description of the plugin/theme
+msgid ""
+"The <code><strong>YITH WooCommerce Frequently Bought Together</strong></"
+"code> allows increasing the average spent of your store by showing a box "
+"with the products purchased together more frequently. In this way, users are "
+"encouraged to add more products to their cart just like on Amazon. <a "
+"href=\"https://yithemes.com/\" target=\"_blank\">Get more plugins for your e-"
+"commerce shop on <strong>YITH</strong></a>."
+msgstr ""
+"Med <code><strong>YITH WooCommerce Frequently Bought Together</strong></"
+"code> kan du öka snittförsäljningen i din butik genom att visa en box med de "
+"produkter som ofta köpts tillsammans. På detta vis uppmuntras användarna att "
+"lägga till fler produkter i sin kundvagn precis som på Amazon. <a "
+"href=\"https://yithemes.com/\" target=\"_blank\">Skaffa fler plugins för din "
+"e-handelsbutik på <strong>YITH</strong></a>."
+
+#: includes/class.yith-wfbt-admin.php:360
+msgctxt "Delete single linked product"
+msgid "Delete"
+msgstr "Radera"
+
+#: includes/class.yith-wfbt-admin.php:394
+msgctxt "tab in product data box"
+msgid "Frequently Bought Together"
+msgstr "Frequently Bought Together "
+
+#: includes/class.yith-wfbt.php:331
+msgctxt "[gutenberg]: block name"
+msgid "Frequently Bought Form"
+msgstr "Frequently Bought-Formulär"
+
+#: includes/class.yith-wfbt.php:332
+msgctxt "[gutenberg]: block description"
+msgid ""
+"With this block you can print a product \"frequently bought together\" form."
+msgstr ""
+"Med detta block kan du skriva ut en produkts \"Ofta köpt tillsammans\"-"
+"gruppering."
+
+#: includes/class.yith-wfbt.php:338
+msgctxt "[gutenberg]: attributes description"
+msgid "Add the product id (leave blank to get global product value)"
+msgstr "Lägg till produkt-ID (lämna tomt för att få globalt produktvärde)"
+
+#: plugin-options/product-data-options.php:146
+msgctxt "Inline input label for admin option"
+msgid "products"
+msgstr "produkter"
+
+#~ msgctxt "YES/NO button: use MAX 3 characters!"
+#~ msgid "NO"
+#~ msgstr "NEJ"
+
+#~ msgctxt "YES/NO button: use MAX 3 characters!"
+#~ msgid "YES"
+#~ msgstr "JA"

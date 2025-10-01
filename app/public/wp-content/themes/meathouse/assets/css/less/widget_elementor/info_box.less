@@ -1,0 +1,94 @@
+.jws-info-box {
+   &.layout1 {
+     .jws-info-box-inner {
+        text-align:center;
+        &:hover {
+           .box-image {
+             &:before {
+                opacity:1;
+                transform: scale(1);
+             }
+             img {
+                transform: translateY(-5px);
+             }
+           } 
+        }
+     }   
+     .box-icon {
+        margin-bottom: 5px;
+     }
+     .box-title {
+        color:var(--heading);
+        font-weight: 500;
+        margin-bottom: 14px;
+     } 
+     .box-image {
+        display: inline-block;
+        position: relative;
+        img {
+            transition: 0.3s all;
+        }
+        &:before {
+           content:url('../assets/image/info_hover.png');
+           position: absolute;
+           transition: 0.3s all;
+          top: -12px;
+          opacity: 0;
+          transform: scale(0.5);
+        }
+     }
+     .box-content {
+        color: var(--body);
+        margin-bottom: 10px;
+     }
+     .box-more {
+       color:var(--heading);
+       font-weight: 500;
+       transition: 0.3s all; 
+       &:hover {
+        color:var(--main);
+       }
+       i{
+         margin-left: 10px;
+       }
+     }  
+   }
+   &.layout2 {
+      position: relative;
+      a {
+        position:relative;
+      }
+        &:before {
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: 0.7s all;
+            position: absolute;
+            border: 1px solid var(--heading);
+            width: 100%;
+            height: 100%;
+        }
+        &:hover {
+            &:before {
+                opacity:1;
+                transform: translate(-7px,-7px);
+            }
+        }
+     .jws-info-box-inner {
+        text-align: center;
+     }   
+     .box-more {
+        transition: 0.3s all;
+       i{
+             margin-left: 3px;
+            font-size: 14px;
+            &:before {
+                font-weight:700;
+            }
+       }
+     }  
+   }
+}

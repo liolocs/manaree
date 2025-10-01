@@ -1,0 +1,104 @@
+.jws_team {
+     .jws_team_inner { 
+        .jws_team_image {
+            position:relative;
+            overflow: hidden;
+            text-align: center;
+            img {
+               transition: 0.7s all;
+            }
+        }
+        &:hover {
+            .jws_team_image {
+                img {
+                    transform: scale(1.15);
+                }
+            } 
+        }
+        .team_title {
+        margin-bottom: 2px;
+        margin-top: 25px;
+        font-size: 18px;
+      }  
+      .team_job {
+         font-family: var(--font2);
+        color: var(--heading);
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+  }
+    &.layout2 {
+       .jws_team_inner { 
+        position:relative;
+        .team_title {
+            margin-top:20px;
+        }
+        .team_icon  {
+            position: absolute;
+            left: -9px;
+            background: var(--main);
+            z-index: 1;
+            top: 0;
+            padding: 19px 15px 13px;
+            text-align: center;
+            a {
+                color:#ffffff;
+                opacity: 0.8;
+                margin-bottom: 4px;
+                display: block;
+                &:hover {
+                    opacity:1;
+                }
+            }
+            &:after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-top: 0px solid transparent;
+                border-right: 9px solid #03111a;
+                border-bottom: 12px solid transparent;
+                position: absolute;
+                left: 0;
+                bottom: -12px;
+            }
+        }
+        .jws_team_content {
+              text-align:center;
+         }     
+       } 
+    }
+    &.layout1 {
+        .jws_team_inner {
+            .jws_team_content {
+              text-align:center;  
+              
+              .team_description {
+                margin-bottom: 20px;
+              }
+              .team_icon {
+                    display: flex;
+                    justify-content: center;
+                    li {
+                        display: inline-block;
+                        text-align: center;
+                        margin: 0 6px;
+                        a {
+                            width: 40px;
+                            display: block;
+                            height: 40px;
+                            line-height: 40px;
+                            background: #e6eaed;
+                            font-size: 14px;
+                            border-radius: 50%;
+                            &:hover {
+                              background: var(--main);
+                              color: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+          
+        }
+    }
+}

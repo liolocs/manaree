@@ -1,0 +1,399 @@
+.jws-login-container {
+    .popup-message {display:none;margin-top: 2em;}
+    .jws-password-hint {
+        display:none;
+    }
+    .meter {
+        display: none;
+        .text-meter {
+            margin-left: 10px;
+            color: #b99900;  
+        }
+      
+        .meter-box {
+            margin-top: 20px;
+             margin-bottom: 20px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            -webkit-align-items: center;
+        }
+
+        span:not(.text-meter) {
+            background:#ebebeb; 
+            height: 3px;
+            width: 35px;
+            position: relative;
+            margin-right: 5px;
+            &:before {
+                content:"";
+                left: 0;
+                top: 0;
+                transition: 0.3s all;
+                width: 0;
+                height: 100%;
+                background:#b99900;
+                position: absolute;
+            }   
+        }
+        span {
+             display:inline-block;
+        }
+        &[meter="1"] {
+          .box1:before {
+            width: 100%;
+          }  
+        }
+        &[meter="2"] {
+          .box1 , .box2 {
+            &:before{
+              width: 100%;  
+            }  
+          }   
+        }
+        &[meter="3"] {
+           .box1 , .box2 , .box3 {
+             &:before{
+              width: 100%; 
+              background: #266b09; 
+            } 
+          } 
+          .text-meter {
+            color: #266b09; 
+          }
+        }
+        &[meter="4"] {
+            .box1 , .box2 , .box3 , .box4 {
+             &:before{
+              width: 100%; 
+              background: #266b09; 
+            } 
+            .text-meter {
+                color: #266b09; 
+             }
+          } 
+        }
+    }
+}
+#jws-login-form {
+    .message {
+           padding: 5px 15px;
+    } 
+    .slick-slide {
+        width:100%;
+    }  
+    .slick-track {
+       .slick-slide {
+            opacity: 0;
+            transition:0.3s all; 
+            &.slick-active {
+                opacity:1;
+            }
+        }  
+    }
+    
+    &.in-login {
+      .jws-register {
+         display: none;
+      }  
+      .swiper-container-initialized .jws-register {
+         display: block;
+      }
+    }
+    
+
+    .jws-login-container {
+        &.loading {
+            .jws-animation {
+                opacity: 0.3 !important;
+                animation: none;
+                pointer-events: none;
+            } 
+        }
+    }
+    .heading-form {
+        margin-bottom: 25px;
+    }
+    .section-form-left {
+        padding: 44px 62px;
+        box-shadow: 0px 10px 64.35px 0.65px rgba(16, 34, 45, 0.09); 
+        .change-form {
+            display: none !important;
+        }
+    }
+    .section-form-right {
+        padding-left: 30px;
+        .section-register , .section-login {
+            display:none;
+            p {
+                margin-top: 13px;
+                margin-bottom: 26px;
+            }
+            a {
+                display: inline-block;
+                color: #ffffff;
+                background: var(--main);
+                text-transform: uppercase;
+                padding: 15px 37px;
+                letter-spacing: 1.5px;
+                &:hover {
+                    background:var(--secondary);
+                }
+            }
+        }
+    }
+    .jws-animation {
+          display: inline-block; 
+          width: 100%; 
+          position: relative;
+          transition: 0.3s all;
+         
+          .form-contaier:after {
+            content:"";
+            display: table;
+            clear: both;
+          }
+          .login-width-social {
+            a {
+            height: 50px;
+            width: 100%;
+            border: 2px solid #E8E8EB;
+            text-align: center;
+            display: block;
+            line-height: 45px;
+            font-weight: 500;
+            position: relative;
+            background: #ffffff;
+            &.jws-connect-google {
+                &:before {
+                   background:no-repeat center/18px url("../assets/image/google-btn-icon.svg"); 
+                }
+            }
+            &.jws-connect-facebook {
+                &:before {
+                      content: "\f09a";
+                      font-family: "Font Awesome 5 Brands";
+                      font-weight: 400;
+                      color: #275C82;
+                }
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                left: 13px;
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                top: 10px;
+            }
+            &:first-child {
+                margin-bottom:16px;
+            }
+            }
+            .social-line {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 17px;
+                margin-bottom: 23px;
+                font-size: 14px;
+                span {
+                    margin: 0 30px;
+                }
+                &:before {
+                    content: "";
+                    flex: 1 0 0%;
+                    border-bottom: 1px solid rgba(113, 116, 136, 0.1);
+                }
+                &:after {
+                    content: "";
+                    flex: 1 0 0%;
+                    border-bottom: 1px solid rgba(113, 116, 136, 0.1);
+                }
+            }
+          }
+         
+
+          form {
+            &[name="registerformpopup"] {
+                .input[name="repeat_password"] {
+                    margin-bottom:0;
+                }
+            }
+            #recaptcha7 {
+               margin-bottom: 20px; 
+               will-change: transform;
+            }
+            #recaptcha8 {
+               margin-bottom: 20px; 
+            }
+            p {
+                margin: 0;
+                margin-bottom: 22px;
+                position: relative;
+                .toggle-password2 {
+                    position: absolute;
+                    right: 16px;
+                    top: 39px;
+                    font-size: 18px;
+                    &.jws-icon-eye-slash-light {
+                        &:after {
+                            position: absolute;
+                            left: -3px;
+                            top: 12px;
+                            content: "";
+                            width: 24px;
+                            height: 1px;
+                            background: #999898;
+                            transform: rotate(-15deg);
+                        }
+                    }
+                }
+            }
+            label {
+               margin-bottom: 3px;
+            }
+            input:not([type="checkbox"]):not([type="submit"]) {
+                background:#f3f3f3;
+                border-color:#c2c2c2;
+                &.invalid {
+                       border-color: #ff0000; 
+                }
+            }
+            .login-submit {
+              margin-top: 23px;
+              margin-bottom: 13px;  
+            }
+            .lost-pass-link {
+                display: block;  
+                float: right;
+                color:var(--main);
+                font-weight: 500;   
+            }
+            input.invalid {
+                  border-color: var(--main);  
+            }
+            .login-remember {
+                label {
+                    margin-bottom:0;
+                    display: inline-block;
+                }
+            }
+            #popupRememberme {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 5px;
+                    margin-top: -5px;
+                    -webkit-appearance: none;
+                    position: relative;
+              &:checked {
+                &:before {
+                   background:#2f76bf;
+                   border-color:#2f76bf;
+                }
+                &:after {
+                    opacity: 1;
+                }
+              }
+              &:after {
+                    content: "\f00c";
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                    position: absolute;
+                    opacity: 0;
+                    top: -5px;
+                    color: #ffffff;
+                    font-size: 8px;
+                    left: 4px;  
+              }
+              &:before {
+                content:"";
+                width: 15px;
+                height: 15px;
+                border: 1px solid rgba(113, 116, 136, 0.5);
+                display: block;
+              }
+            }
+
+            .button {
+                display: inline-block;
+                color: #ffffff;
+                background: var(--main);
+                text-transform: uppercase;
+                padding: 21px 43px;
+                letter-spacing: 1.5px;
+                border: 0;
+                font-size: inherit;
+                &:hover {
+                   background: var(--secondary);
+                }        
+            }
+           
+          }
+ 
+   }
+
+   &.in-register {
+        .section-login {
+           display:block; 
+        }
+   }
+   &.in-login {
+        .section-register {
+            display:block;
+        }
+   }
+}
+.jws-dealer-note {
+ display: inline;
+  vertical-align: middle;   
+}
+
+.jws-form-login-popup {
+  .row {
+    > div {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+  } 
+  #jws-login-form  {
+    .section-form-left {
+      padding: 0;
+      box-shadow: none;
+      .change-form {
+        display:block !important;
+      }
+    }
+    .section-form-right {
+       padding-left: 0; 
+      .section-register , .section-login {
+        display:none !important;
+      }
+    }
+  }
+}
+@media(max-width:767px) {
+  .jws-form-login-popup .jws-form-content {
+    padding: 26px 20px 45px 20px;
+  } 
+  #jws-login-form .section-form-left .change-form {
+    display: block !important;
+  }
+  .section-form-right {
+    .section-register , .section-login {
+        display:none !important;
+    }
+  }
+  #jws-login-form  {
+    .section-form-left {
+      padding: 0px 10px;
+      box-shadow: none;
+    }
+     .section-form-right {
+        padding-left: 0;
+        padding-top: 20px;
+     }    
+  }
+}

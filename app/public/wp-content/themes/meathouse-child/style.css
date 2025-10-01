@@ -1,0 +1,77 @@
+/*
+Theme Name: MeatHouse Child
+Theme URI: https://meathouse.jwsuperthemes.com
+Template: meathouse
+Author: the JWSThemes team
+Author URI: https://jwsuperthemes.com
+Description: MeatHouse is a meat shop WordPress theme perfectly suitable for meat box, meat delivery and butcher store store sites with a flexible design. It supports many great features with its theme options panel. The theme provides professionally designed 5+ homepages, creative headers, and powerful animations. There is no need for coding skills here either. You can drag and drop everything to build the store site you want.
+Tags: one-column,flexible-header,accessibility-ready,custom-colors,custom-menu,custom-logo,editor-style,featured-images,footer-widgets,rtl-language-support,sticky-post,threaded-comments,translation-ready
+Version: 2.1.0
+Updated: 2022-11-30 09:03:43
+*/
+
+:root {
+  --main: #0d354f;
+  --secondary: #a3714e;
+  --light: #ffffff;
+  --dark: #000000;
+  --heading: #0d354f;
+  --body: #727272;
+  --bodybg: #ffffff;
+  --btn-bgcolor: #ffffff;
+  --btn-color: #0d354f;
+  --btn-bgcolor2: #0d354f;
+  --btn-color2: #ffffff;
+}
+.btn-theme {
+  background: var(--main);
+  color: #ffffff;
+  height: 50px;
+  padding: 0 40px;
+  text-align: center;
+  line-height: 50px;
+}
+
+button.btn-theme {
+  border: 0;
+}
+.woocommerce-product-details__short-description .markdown, .woocommerce-product-details__short-description ul li:last-child, .woocommerce-product-details__short-description p:last-child{
+	margin-bottom: 35px;
+}
+.product .related {
+    padding-top: 73px !important;
+}
+#pa_pieces, .jws-quantity-wrap .quantity input[type=number], .jws-quantity-wrap .quantity>span, .variations_form select{
+	border-color: #0d354f !important;
+}
+.variations_form .label label, .jws-quantity-wrap .quantity>span:before,  select#pa_pieces, select#pa_pots-caviar, select#pa_huitres {
+	color: #0d354f !important;
+}
+#billing_country_field{
+	margin-bottom: 50px !important;
+    z-index: 999 !important;
+}
+label[for="billing_country"] {
+  margin-top: 20px;
+}
+.woocommerce-checkout-review-order-table th {
+    white-space: nowrap;
+}
+@media only screen and (max-width: 767px) {
+    .thumbnail_position_bottom2 .woocommerce-tabs {
+        margin-top: 20px;
+    }
+	.woocommerce-product-details__short-description .markdown, .woocommerce-product-details__short-description p:last-child{
+		margin-bottom: 10px !important;
+	}
+	.woocommerce-product-details__short-description ul li:last-child{
+		margin-bottom: 20px
+	}
+	.single-blog {
+    	padding: 40px 0 40px !important;
+		text-align: justify;
+	}
+	.single-blog .wp-block-list{
+		padding-left: 20px;
+	}
+}

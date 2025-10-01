@@ -1,0 +1,68 @@
+.button-default {
+   .btn-main , .jws-cf7-style .wpcf7-submit  , .tab_nav a {
+        background:var(--btn-bgcolor);
+        color:var(--btn-color);
+        border:0;
+        padding-top: 10px;
+        padding-right: 42px;
+        padding-bottom: 10px;
+        padding-left: 42px;
+        font-weight: 500;
+        font-size:14px;
+        line-height: 26px;
+        border: 1px solid var(--btn-bgcolor2);
+        letter-spacing: 1.5px;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        transition: .9s ease;
+        > span {
+            z-index:1;
+            position: relative;
+        }
+        &:before {
+                background: var(--btn-bgcolor2);
+                content: "";
+                width: 200px;
+                height: 200px;
+                transform: rotate(50deg);
+                position: absolute;
+                left: -159px;
+                bottom: -168px;
+                transition: .9s ease;
+        }
+      &:hover {
+        &:before {
+            transform: scale(3.4) translateY(-15%);
+            border-radius: 100%;
+            transform-origin: left;
+        }
+        color:var(--btn-color2);
+     
+      } 
+   }
+}
+
+
+
+.elementor-button {
+    border-radius:0;
+    position: relative;
+    &:hover {
+        .elementor-align-icon-right {
+               animation: bounceAlpha 1s both; 
+               -webkit-animation: bounceAlpha 1s both;
+        }
+        .elementor-align-icon-left {
+               animation: bounceAlpha2 1s both; 
+               -webkit-animation: bounceAlpha2 1s both;
+        }
+    }
+}
+.elementor-button-content-wrapper {
+      align-items: center;
+}
+
+.jws-button a#custom-buttonbr {
+    overflow: hidden;
+}

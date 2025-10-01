@@ -1,0 +1,106 @@
+.jws-menu-list {
+    .menu-list-title {
+        font-size: 14px;
+        font-weight: 500; 
+        color: var(--heading);
+    }
+    .elementor-icon-list-text {
+        color: currentColor !important;
+    }
+   ul {
+        list-style-type: none;
+   } 
+   &.toggle-mobile {
+        ul {
+            li:first-child {
+                padding-top:25px;
+            }
+       } 
+   }
+  .elementor-icon-list-icon  {
+        border-radius: 100%;
+    i , svg {
+         width: 1.25em;
+        height: 1.25em;
+        display: block;
+        line-height: 1.25em;
+        text-align: center;      
+    }
+   
+  }  
+  .line_sm {
+    li {
+       a .elementor-icon-list-text {
+        position:relative;
+        &:before {
+                background:var(--heading);
+                content:"";
+                bottom: 5px;
+               right:0;
+                transition: 0.3s all;
+                position: absolute;
+                height:1px;
+                width: 0%;
+                transition: 0.3s all;  
+        }
+       } 
+       &:focus , &:hover , &.active {
+            a .elementor-icon-list-text:before {
+                width: 100%;
+                    left: 0;  
+            }
+       }
+    }
+  }  
+  .line_pd {
+    li {
+         a {
+            position:relative; 
+            &:before {
+                content: "";
+                background-color: currentColor;
+                width: 0px;
+                height: 1px;
+                position: absolute;
+                left: -30px;
+                top: 50%;
+                transition: 0.3s all;
+           } 
+           }
+         .elementor-icon-list-text { 
+            width: auto;
+            transition: 0.3s all;
+          
+        }
+        &:focus , &:hover , &.active {
+            a:before {
+                   width: 30px;
+                }
+           .elementor-icon-list-text  {
+            transform: translateX(14px);
+                
+           } 
+        }
+    }
+  }  
+}
+@media(max-width:767px) {
+    .jws-menu-list.toggle-mobile {
+        .menu-list-title {
+            cursor: pointer;
+            margin-bottom: 5px;
+            &:after {
+                font-family: "jws_icon";
+                content: '\eaec';
+                margin-left: 5px;
+                font-size: 18px;
+            }
+        }
+        ul {
+            display:none;
+            li:first-child {
+                padding-top: 10px; 
+            }
+        }
+    } 
+}

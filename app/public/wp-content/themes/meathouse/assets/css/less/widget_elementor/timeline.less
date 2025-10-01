@@ -1,0 +1,124 @@
+.jws_timeline {
+    .jws_timeline_main {
+        position:relative;
+    }
+    .jws_timeline_line {
+        position: absolute;
+        left: 50%;
+        top: 5%;
+        margin-left: -1px;
+        height: 92%;
+        width: 2px;
+        opacity: 0.1;
+        background: var(--main);
+    }
+    .jws_timeline_field {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        position: relative;
+        > div {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+            display: flex;
+            align-items: center;
+        }
+        .jws_timeline_image {
+                width: 46%;
+                padding: 0 15px;
+        }
+        .jws_timeline_content_inner {
+            width:68%;
+        }
+        .jws_timeline_circle {
+            span {
+                background:var(--main);
+                width: 15px;
+                height: 15px;
+                border-radius: 100%;
+                position: absolute;
+                left: 50%;
+                margin-left: -7.5px;
+            }
+        }
+        &.position_right {
+             text-align: right;
+            .jws_timeline_content {
+              
+            }
+            .jws_timeline_content_inner {
+                padding-left: 60px;
+                padding-right: 15px;
+                text-align: left;
+            }
+        }
+        &.position_left {
+            .jws_timeline_circle {
+                order: 2;
+            }
+            .jws_timeline_content {
+                text-align: right;
+            }
+            .jws_timeline_content_inner {
+                order:2;
+                padding-right: 60px;
+                padding-left: 15px;
+            }
+        }
+    }
+    .jws_timeline_date {
+        font-weight: 400;
+        font-style: italic;
+    }
+    .jws_timeline_title {
+        font-size: 18px;
+        line-height: 20px;
+        margin-top: 17px;
+        margin-bottom: 14px;
+    }
+    .jws_timeline_desc {
+        max-width: 294px;
+        display: inline-block;
+    }
+}
+@media(max-width:767px) {
+    .jws_timeline {
+        .jws_timeline_line {
+              left: 0;
+                top: 0;
+                height: 100%;
+        }
+        .jws_timeline_field {
+            margin-bottom: 30px;
+            .jws_timeline_image {
+                text-align:center;
+            }
+            &.position_left  {
+                .jws_timeline_content {
+                        text-align: unset;
+                }
+            }
+            .jws_timeline_content_inner {
+                order: unset !important;
+                padding-right: 10px !important;
+                padding-left: 35px !important;
+            }
+            .jws_timeline_circle span {
+                left: 15px;
+                top: 50%;
+                margin-top: -7.5px;
+            }
+            > div {
+                    -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+            }
+        }
+    }
+}

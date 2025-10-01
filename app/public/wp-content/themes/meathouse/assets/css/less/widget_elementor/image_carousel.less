@@ -1,0 +1,35 @@
+.elementor-widget-jws_image_carousel {
+    &.jws-content-align-at-center {
+        .jws-image_carousel-image{
+           align-content: center;
+           -webkit-align-content: center;
+        }
+    }
+    &.jws-content-align-at-bottom {
+        .jws-image_carousel-image {
+            align-content: flex-end;
+            -webkit-align-content: flex-end;
+        }
+    }
+}
+.jws-image_carousel {
+    .jws-image_carousel-image {
+        text-align:center;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        a {
+            display: block;
+            width: 100%;
+        }
+        img {
+            display:inline-block;
+        }
+        .name {
+            font-weight:bold;
+            font-size:14px;
+            color: var(--heading);
+                margin-top: 20px;
+        }
+    }
+}
