@@ -84,6 +84,41 @@ function meathouse_child_inject_banner_section($content) {
 }
 
 /**
+ * Replace element with id="_banniere_apropos" with banniere apropos section template
+ *
+ * @param string $content The page content
+ * @return string Modified content
+ */
+function meathouse_child_inject_apropos_section($content) {
+    // Check if element with id="_banniere_apropos" exists in content
+    if (strpos($content, 'id="_banniere_apropos"') === false && strpos($content, "id='_banniere_apropos'") === false) {
+        return $content;
+    }
+
+    // Get banniere apropos section template
+    ob_start();
+    include(get_stylesheet_directory() . '/template-parts/sections/section-apropos.php');
+    $apropos_html = ob_get_clean();
+
+    // Pattern to match the entire element with id="_banniere_apropos"
+    $patterns = array(
+        // Match with double quotes
+        '/<([a-zA-Z][a-zA-Z0-9]*)[^>]*id="_banniere_apropos"[^>]*>.*?<\/\1>/s',
+        // Match with single quotes
+        '/<([a-zA-Z][a-zA-Z0-9]*)[^>]*id=\'_banniere_apropos\'[^>]*>.*?<\/\1>/s',
+    );
+
+    foreach ($patterns as $pattern) {
+        if (preg_match($pattern, $content)) {
+            $content = preg_replace($pattern, $apropos_html, $content);
+            break;
+        }
+    }
+
+    return $content;
+}
+
+/**
  * Main content modification function
  * Add all content modification functions here
  *
@@ -96,6 +131,9 @@ function meathouse_child_modify_page_content($content) {
 
     // Inject banniere rassurance section
     $content = meathouse_child_inject_banner_section($content);
+
+    // Inject banniere apropos section
+    $content = meathouse_child_inject_apropos_section($content);
 
     // Add more content modifications here as needed
 
