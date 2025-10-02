@@ -1,4 +1,7 @@
 /* Banniere Apropos Section */
+#banniere-apropos {
+  padding: 2rem;
+}
 .banniere-apropos {
   width: 100%;
   overflow: hidden;
@@ -154,6 +157,7 @@
   .apropos-container {
     position: relative;
     height: 60vh;
+    padding: 2rem;
   }
   .apropos-background {
     min-height: 500px;
@@ -172,11 +176,18 @@
   }
 
   .apropos-content {
-    width: 50%;
+    width: 40%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
+  }
+
+  .apropos-title {
+    font-size: 4rem;
+  }
+  .apropos-description {
+    font-size: 1.2rem;
   }
 }
