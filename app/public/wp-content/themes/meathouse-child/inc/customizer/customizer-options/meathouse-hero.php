@@ -71,6 +71,7 @@ function meathouse_child_hero_customizer($wp_customize) {
             'default' => '1',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => 'meathouse_child_sanitize_checkbox',
+            'transport' => 'postMessage',
         )
     );
     $wp_customize->add_control(
@@ -82,6 +83,23 @@ function meathouse_child_hero_customizer($wp_customize) {
             'priority' => 1,
         )
     );
+
+    // Add selective refresh for hero section
+    if (isset($wp_customize->selective_refresh)) {
+        $wp_customize->selective_refresh->add_partial(
+            'meathouse_hs_hero',
+            array(
+                'selector' => '#hero-section',
+                'container_inclusive' => true,
+                'render_callback' => function() {
+                    $template = get_stylesheet_directory() . '/template-parts/sections/section-hero.php';
+                    if (file_exists($template)) {
+                        include($template);
+                    }
+                },
+            )
+        );
+    }
 
     // Hero Background Video
     $wp_customize->add_setting(
@@ -150,6 +168,28 @@ function meathouse_child_hero_customizer($wp_customize) {
                 'step' => 0.1,
             ),
             'priority' => 4,
+        )
+    );
+
+    // Hero Logo
+    $wp_customize->add_setting(
+        'meathouse_hero_logo',
+        array(
+            'default' => '',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'meathouse_child_sanitize_url',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'meathouse_hero_logo',
+            array(
+                'label' => __('Hero Logo', 'meathouse'),
+                'description' => __('Upload a logo image to display in the hero section.', 'meathouse'),
+                'section' => 'meathouse_hero_section',
+                'priority' => 4.5,
+            )
         )
     );
 

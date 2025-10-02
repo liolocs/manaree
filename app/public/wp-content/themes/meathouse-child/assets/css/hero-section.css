@@ -67,6 +67,11 @@
   justify-content: center;
 }
 
+.hero-logo {
+    width: 100%;
+    max-width: 140px;
+}
+
 .hero-section .main-content {
   color: white;
   text-align: center;
@@ -76,6 +81,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2em;
 }
 
@@ -179,7 +185,7 @@
   }
 
   .hero-section .main-content {
-    margin-top: -200px;
+    margin-top: -250px;
   }
 }
 

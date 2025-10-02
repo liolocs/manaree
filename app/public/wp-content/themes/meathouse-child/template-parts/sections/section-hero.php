@@ -7,6 +7,7 @@
 
 // Get customizer values
 $meathouse_hs_hero = get_theme_mod('meathouse_hs_hero', '1');
+$meathouse_hero_logo = get_theme_mod('meathouse_hero_logo');
 $meathouse_hero_title = get_theme_mod('meathouse_hero_title');
 $meathouse_hero_description = get_theme_mod('meathouse_hero_description');
 $meathouse_hero_btn_text = get_theme_mod('meathouse_hero_btn_text');
@@ -17,7 +18,7 @@ $meathouse_hero_video_url = $meathouse_hero_video ? wp_get_attachment_url($meath
 $meathouse_hero_overlay_opacity = get_theme_mod('meathouse_hero_overlay_opacity', '0.4');
 
 if ($meathouse_hs_hero == '1'): ?>
-    <section class="hero-section" id="hero-section">
+    <section class="hero-section" id="hero-section" <?php if (is_customize_preview()) { echo 'data-customize-partial-id="meathouse_hero_section"'; } ?>>
         <div class="hero-container">
             <?php if (!empty($meathouse_hero_video_url)): ?>
                 <video autoplay class="hero-background-video" loop muted playsinline>
@@ -33,6 +34,12 @@ if ($meathouse_hs_hero == '1'): ?>
 
             <div class="hero-content">
                 <div class="main-content text-center">
+                    <?php if (!empty($meathouse_hero_logo)): ?>
+                        <div class="hero-logo">
+                            <img src="<?php echo esc_url($meathouse_hero_logo); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
+                        </div>
+                    <?php endif; ?>
+
                     <?php if (!empty($meathouse_hero_title)): ?>
                         <h1><?php echo wp_kses_post($meathouse_hero_title); ?></h1>
                     <?php endif; ?>
