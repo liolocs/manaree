@@ -71,6 +71,7 @@ function meathouse_child_banner_customizer($wp_customize) {
                 'default' => '',
                 'capability' => 'edit_theme_options',
                 'sanitize_callback' => 'meathouse_child_sanitize_url',
+                'transport' => 'postMessage',
             )
         );
         $wp_customize->add_control(
@@ -92,6 +93,7 @@ function meathouse_child_banner_customizer($wp_customize) {
                 'default' => '',
                 'capability' => 'edit_theme_options',
                 'sanitize_callback' => 'sanitize_text_field',
+                'transport' => 'postMessage',
             )
         );
         $wp_customize->add_control(
@@ -111,6 +113,7 @@ function meathouse_child_banner_customizer($wp_customize) {
                 'default' => '',
                 'capability' => 'edit_theme_options',
                 'sanitize_callback' => 'wp_kses_post',
+                'transport' => 'postMessage',
             )
         );
         $wp_customize->add_control(
@@ -129,7 +132,7 @@ function meathouse_child_banner_customizer($wp_customize) {
         $wp_customize->selective_refresh->add_partial(
             'meathouse_hs_banner',
             array(
-                'selector' => '#banner-reassurance',
+                'selector' => '#banniere-reassurance',
                 'container_inclusive' => true,
                 'render_callback' => function() {
                     $template = get_stylesheet_directory() . '/template-parts/sections/section-banner.php';
@@ -139,6 +142,51 @@ function meathouse_child_banner_customizer($wp_customize) {
                 },
             )
         );
+
+        // Add selective refresh for each banner item
+        for ($i = 1; $i <= 4; $i++) {
+            $wp_customize->selective_refresh->add_partial(
+                "meathouse_banner_item_{$i}",
+                array(
+                    'selector' => "[data-customize-partial-id='meathouse_banner_item_{$i}']",
+                    'container_inclusive' => true,
+                    'settings' => array(
+                        "meathouse_banner_item_{$i}_image",
+                        "meathouse_banner_item_{$i}_title",
+                        "meathouse_banner_item_{$i}_description",
+                    ),
+                    'render_callback' => function() use ($i) {
+                        $items_json = get_theme_mod('meathouse_banner_items', '');
+                        $items = json_decode($items_json, true);
+
+                        if (!empty($items) && is_array($items) && isset($items[$i - 1])) {
+                            $item = $items[$i - 1];
+                            if (!empty($item['image']) || !empty($item['title']) || !empty($item['description'])) : ?>
+                                <div class="banniere-item" <?php if (is_customize_preview()) { echo 'data-customize-partial-id="meathouse_banner_item_' . $i . '"'; } ?>>
+                                    <?php if (!empty($item['image'])) : ?>
+                                        <div class="banniere-item-image">
+                                            <img src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title'] ?? ''); ?>">
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($item['title'])) : ?>
+                                        <div class="banniere-item-title">
+                                            <h3><?php echo esc_html($item['title']); ?></h3>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($item['description'])) : ?>
+                                        <div class="banniere-item-description">
+                                            <p><?php echo wp_kses_post($item['description']); ?></p>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif;
+                        }
+                    },
+                )
+            );
+        }
     }
 }
 

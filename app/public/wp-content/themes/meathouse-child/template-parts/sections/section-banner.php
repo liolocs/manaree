@@ -16,9 +16,9 @@ if ($meathouse_hs_banner == '1' && !empty($meathouse_banner_items)) :
         <section class="banniere-reassurance" id="banniere-reassurance">
             <div class="banniere-container">
                 <div class="banniere-items">
-                    <?php foreach ($items as $item) :
+                    <?php foreach ($items as $index => $item) :
                         if (!empty($item['image']) || !empty($item['title']) || !empty($item['description'])) : ?>
-                            <div class="banniere-item">
+                            <div class="banniere-item" <?php if (is_customize_preview()) { echo 'data-customize-partial-id="meathouse_banner_item_' . ($index + 1) . '"'; } ?>>
                                 <?php if (!empty($item['image'])) : ?>
                                     <div class="banniere-item-image">
                                         <img src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title'] ?? ''); ?>">
