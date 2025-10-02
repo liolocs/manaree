@@ -85,3 +85,66 @@ require get_stylesheet_directory() . '/inc/extras.php';
  * Hook into the_content filter to modify page content
  */
 add_filter( 'the_content', 'meathouse_child_modify_page_content' );
+
+/**
+ * Enqueue JavaScript for product rassurance banner injection
+ * This approach avoids output buffering conflicts with Elementor
+ */
+add_action( 'wp_enqueue_scripts', 'meathouse_child_enqueue_product_rassurance_script' );
+
+function meathouse_child_enqueue_product_rassurance_script() {
+    // Get the theme mod values
+    $meathouse_hs_product_rassurance = get_theme_mod('meathouse_hs_product_rassurance', '1');
+    $meathouse_product_rassurance_items = get_theme_mod('meathouse_product_rassurance_items', '');
+
+    if ($meathouse_hs_product_rassurance != '1' || empty($meathouse_product_rassurance_items)) {
+        return;
+    }
+
+    $items = json_decode($meathouse_product_rassurance_items, true);
+
+    if (empty($items) || !is_array($items)) {
+        return;
+    }
+
+    // Build the HTML
+    $html = '<section class="payment-banner" id="payment-banner">';
+
+    foreach ($items as $item) {
+        if (!empty($item['image']) || !empty($item['title']) || !empty($item['subtitle'])) {
+            $html .= '<div class="payment-banner-item">';
+
+            if (!empty($item['image'])) {
+                $html .= '<div class="payment-banner-image">';
+                $html .= '<img src="' . esc_url($item['image']) . '" alt="' . esc_attr($item['title'] ?? '') . '">';
+                $html .= '</div>';
+            }
+
+            $html .= '<div class="payment-banner-content">';
+
+            if (!empty($item['title'])) {
+                $html .= '<h3 class="payment-banner-title">' . esc_html($item['title']) . '</h3>';
+            }
+
+            if (!empty($item['subtitle'])) {
+                $html .= '<p class="payment-banner-subtitle">' . wp_kses_post($item['subtitle']) . '</p>';
+            }
+
+            $html .= '</div>';
+            $html .= '</div>';
+        }
+    }
+
+    $html .= '</section>';
+
+    // Enqueue inline script to inject the banner
+    wp_add_inline_script( 'jquery', "
+        jQuery(document).ready(function($) {
+            // Look for element with id='_banniere_product_rassurance' and replace it
+            var targetElement = $('#_banniere_product_rassurance');
+            if (targetElement.length) {
+                targetElement.replaceWith(" . json_encode($html) . ");
+            }
+        });
+    " );
+}
