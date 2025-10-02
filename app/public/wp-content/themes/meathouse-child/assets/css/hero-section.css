@@ -8,7 +8,7 @@
 /* Hero Section Container */
 .hero-section {
   position: relative;
-  height: 80vh;
+  height: calc(100vh - 146px);
   min-height: 600px;
   overflow: hidden;
   display: flex;
@@ -176,6 +176,10 @@
   }
   .hero-section .btn::before {
     height: 51% !important;
+  }
+
+  .hero-section .main-content {
+    margin-top: -200px;
   }
 }
 

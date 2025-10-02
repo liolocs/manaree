@@ -41,6 +41,9 @@ if ( !function_exists( 'meathouse_child_enqueue_styles' ) ):
         // Load the child theme stylesheet
         wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array(), $version );
 
+        // Load header CSS
+        wp_enqueue_style( 'header-style', get_stylesheet_directory_uri() . '/assets/css/header.css', array(), $version );
+
         // Load hero section CSS
         wp_enqueue_style( 'hero-section-style', get_stylesheet_directory_uri() . '/assets/css/hero-section.css', array(), $version );
 

@@ -105,3 +105,16 @@ Stack trace:
 #3 /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/plugins/elementor/includes/plugin.php(709): Elementor\Core\Modules_Manager->__construct()
 #4 /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/plugins/elementor/includes/plugin.php(627): Elementor\Plugin->init_components()
 #5 /Users/quicktweet/ in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/plugins/elementor/modules/cloud-library/module.php on line 190
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
+[01-Oct-2025 15:36:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse/inc/elementor_widget/elementor_plugin.php on line 253
