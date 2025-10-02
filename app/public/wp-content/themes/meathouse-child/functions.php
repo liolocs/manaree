@@ -82,13 +82,6 @@ require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathou
 require get_stylesheet_directory() . '/inc/extras.php';
 
 /**
- * Hook into the output buffer to modify content before it's sent to browser
- */
-add_action( 'init', function() {
-    ob_start( 'meathouse_child_modify_page_content' );
-} );
-
-/**
- * Also hook into the_content filter as an additional layer
+ * Hook into the_content filter to modify page content
  */
 add_filter( 'the_content', 'meathouse_child_modify_page_content' );

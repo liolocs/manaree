@@ -6,12 +6,19 @@
  */
 
 /**
+ * Global variable to store pre-rendered templates
+ */
+global $meathouse_child_rendered_templates;
+$meathouse_child_rendered_templates = array();
+
+/**
  * Replace element with id="_section-hero" with hero section template
  *
  * @param string $content The page content
  * @return string Modified content
  */
-function meathouse_child_inject_hero_section($content) {
+function meathouse_child_inject_hero_section($content)
+{
     // Check if element with id="_section-hero" exists in content
     if (strpos($content, 'id="_section-hero"') === false && strpos($content, "id='_section-hero'") === false) {
         return $content;
@@ -54,7 +61,8 @@ function meathouse_child_inject_hero_section($content) {
  * @param string $content The page content
  * @return string Modified content
  */
-function meathouse_child_inject_banner_section($content) {
+function meathouse_child_inject_banner_section($content)
+{
     // Check if element with id="_banner_rassurance" exists in content
     if (strpos($content, 'id="_banner_rassurance"') === false && strpos($content, "id='_banner_rassurance'") === false) {
         return $content;
@@ -89,7 +97,8 @@ function meathouse_child_inject_banner_section($content) {
  * @param string $content The page content
  * @return string Modified content
  */
-function meathouse_child_inject_apropos_section($content) {
+function meathouse_child_inject_apropos_section($content)
+{
     // Check if element with id="_banniere_apropos" exists in content
     if (strpos($content, 'id="_banniere_apropos"') === false && strpos($content, "id='_banniere_apropos'") === false) {
         return $content;
@@ -124,7 +133,8 @@ function meathouse_child_inject_apropos_section($content) {
  * @param string $content The page content
  * @return string Modified content
  */
-function meathouse_child_inject_reviews_section($content) {
+function meathouse_child_inject_reviews_section($content)
+{
     // Check if element with id="_banniere_reviews" exists in content
     if (strpos($content, 'id="_banniere_reviews"') === false && strpos($content, "id='_banniere_reviews'") === false) {
         return $content;
@@ -159,30 +169,67 @@ function meathouse_child_inject_reviews_section($content) {
  * @param string $content The page content
  * @return string Modified content
  */
-function meathouse_child_inject_product_rassurance_section($content) {
+function meathouse_child_inject_product_rassurance_section($content)
+{
     // Check if element with id="_banniere_product_rassurance" exists in content
-    if (strpos($content, 'id="_banniere_product_rassurance"') === false && strpos($content, "id='_banniere_product_rassurance'") === false) {
+    // More flexible check that allows other attributes before the id
+    if (strpos($content, '_banniere_product_rassurance') === false) {
+        error_log('OUTPUT NOT FOUND');
         return $content;
     }
 
-    // Get banniere product rassurance section template
-    ob_start();
-    include(get_stylesheet_directory() . '/template-parts/sections/section-product-rassurance.php');
-    $product_rassurance_html = ob_get_clean();
+    // Build the replacement HTML directly without using ob_start()
+    // Get the theme mod values
+    $meathouse_hs_product_rassurance = get_theme_mod('meathouse_hs_product_rassurance', '1');
+    $meathouse_product_rassurance_items = get_theme_mod('meathouse_product_rassurance_items', '');
+
+    $product_rassurance_html = '';
+
+    if ($meathouse_hs_product_rassurance == '1' && !empty($meathouse_product_rassurance_items)) {
+        $items = json_decode($meathouse_product_rassurance_items, true);
+
+        if (!empty($items) && is_array($items)) {
+            $product_rassurance_html = '<section class="payment-banner" id="payment-banner">';
+
+            foreach ($items as $item) {
+                if (!empty($item['image']) || !empty($item['title']) || !empty($item['subtitle'])) {
+                    $product_rassurance_html .= '<div class="payment-banner-item">';
+
+                    if (!empty($item['image'])) {
+                        $product_rassurance_html .= '<div class="payment-banner-image">';
+                        $product_rassurance_html .= '<img src="' . esc_url($item['image']) . '" alt="' . esc_attr($item['title'] ?? '') . '">';
+                        $product_rassurance_html .= '</div>';
+                    }
+
+                    $product_rassurance_html .= '<div class="payment-banner-content">';
+
+                    if (!empty($item['title'])) {
+                        $product_rassurance_html .= '<h3 class="payment-banner-title">' . esc_html($item['title']) . '</h3>';
+                    }
+
+                    if (!empty($item['subtitle'])) {
+                        $product_rassurance_html .= '<p class="payment-banner-subtitle">' . wp_kses_post($item['subtitle']) . '</p>';
+                    }
+
+                    $product_rassurance_html .= '</div>';
+                    $product_rassurance_html .= '</div>';
+                }
+            }
+
+            $product_rassurance_html .= '</section>';
+        }
+    }
+
+    if (empty($product_rassurance_html)) {
+        return $content;
+    }
 
     // Pattern to match the entire element with id="_banniere_product_rassurance"
-    $patterns = array(
-        // Match with double quotes
-        '/<([a-zA-Z][a-zA-Z0-9]*)[^>]*id="_banniere_product_rassurance"[^>]*>.*?<\/\1>/s',
-        // Match with single quotes
-        '/<([a-zA-Z][a-zA-Z0-9]*)[^>]*id=\'_banniere_product_rassurance\'[^>]*>.*?<\/\1>/s',
-    );
+    // Using a simpler pattern that matches the opening tag and everything until the closing tag
+    $pattern = '/<div[^>]*id=["\']_banniere_product_rassurance["\'][^>]*>.*?<\/div>/s';
 
-    foreach ($patterns as $pattern) {
-        if (preg_match($pattern, $content)) {
-            $content = preg_replace($pattern, $product_rassurance_html, $content);
-            break;
-        }
+    if (preg_match($pattern, $content, $matches)) {
+        $content = preg_replace($pattern, $product_rassurance_html, $content);
     }
 
     return $content;
@@ -195,7 +242,8 @@ function meathouse_child_inject_product_rassurance_section($content) {
  * @param string $content The page content
  * @return string Modified content
  */
-function meathouse_child_modify_page_content($content) {
+function meathouse_child_modify_page_content($content)
+{
     // Inject hero section
     $content = meathouse_child_inject_hero_section($content);
 

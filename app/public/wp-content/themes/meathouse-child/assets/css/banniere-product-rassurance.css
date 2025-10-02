@@ -1,7 +1,7 @@
 /* Banniere Product Rassurance Section */
 .payment-banner {
     width: 100%;
-    background-color: var(--secondary-bg-color);
+    background-color: #f1f5f1;
     padding: 2em;
     margin-top: 2em;
     border-radius: 8px;
@@ -43,7 +43,7 @@
 }
 
 .payment-banner-title {
-    color: #fff;
+    color: #000;
     font-size: 1.1em;
     font-weight: 600;
     margin: 0;
