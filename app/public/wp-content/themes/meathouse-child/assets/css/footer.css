@@ -1,0 +1,19 @@
+/* Footer Styles */
+.jws-menu-list ul {
+  padding-left: 0px !important;
+}
+#_footer-section {
+  padding: 2rem;
+}
+@media (min-width: 768px) {
+  #footer-copyright ul {
+    display: flex;
+  }
+
+  #footer-copyright
+    .elementor-column-gap-default
+    > .elementor-column
+    > .elementor-element-populated {
+    justify-content: space-between !important;
+  }
+}

@@ -56,6 +56,9 @@ if ( !function_exists( 'meathouse_child_enqueue_styles' ) ):
         // Load banniere reviews CSS
         wp_enqueue_style( 'banniere-reviews-style', get_stylesheet_directory_uri() . '/assets/css/banniere-reviews.css', array(), $version );
 
+        // Load footer CSS
+        wp_enqueue_style( 'footer-style', get_stylesheet_directory_uri() . '/assets/css/footer.css', array(), $version );
+
         // Add more modular CSS files here as needed
     }
 endif;
