@@ -154,6 +154,41 @@ function meathouse_child_inject_reviews_section($content) {
 }
 
 /**
+ * Replace element with id="_banniere_product_rassurance" with banniere product rassurance section template
+ *
+ * @param string $content The page content
+ * @return string Modified content
+ */
+function meathouse_child_inject_product_rassurance_section($content) {
+    // Check if element with id="_banniere_product_rassurance" exists in content
+    if (strpos($content, 'id="_banniere_product_rassurance"') === false && strpos($content, "id='_banniere_product_rassurance'") === false) {
+        return $content;
+    }
+
+    // Get banniere product rassurance section template
+    ob_start();
+    include(get_stylesheet_directory() . '/template-parts/sections/section-product-rassurance.php');
+    $product_rassurance_html = ob_get_clean();
+
+    // Pattern to match the entire element with id="_banniere_product_rassurance"
+    $patterns = array(
+        // Match with double quotes
+        '/<([a-zA-Z][a-zA-Z0-9]*)[^>]*id="_banniere_product_rassurance"[^>]*>.*?<\/\1>/s',
+        // Match with single quotes
+        '/<([a-zA-Z][a-zA-Z0-9]*)[^>]*id=\'_banniere_product_rassurance\'[^>]*>.*?<\/\1>/s',
+    );
+
+    foreach ($patterns as $pattern) {
+        if (preg_match($pattern, $content)) {
+            $content = preg_replace($pattern, $product_rassurance_html, $content);
+            break;
+        }
+    }
+
+    return $content;
+}
+
+/**
  * Main content modification function
  * Add all content modification functions here
  *
@@ -172,6 +207,9 @@ function meathouse_child_modify_page_content($content) {
 
     // Inject banniere reviews section
     $content = meathouse_child_inject_reviews_section($content);
+
+    // Inject banniere product rassurance section
+    $content = meathouse_child_inject_product_rassurance_section($content);
 
     // Add more content modifications here as needed
 

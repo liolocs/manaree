@@ -59,6 +59,9 @@ if ( !function_exists( 'meathouse_child_enqueue_styles' ) ):
         // Load footer CSS
         wp_enqueue_style( 'footer-style', get_stylesheet_directory_uri() . '/assets/css/footer.css', array(), $version );
 
+        // Load banniere product rassurance CSS
+        wp_enqueue_style( 'banniere-product-rassurance-style', get_stylesheet_directory_uri() . '/assets/css/banniere-product-rassurance.css', array(), $version );
+
         // Add more modular CSS files here as needed
     }
 endif;
@@ -71,6 +74,7 @@ require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathou
 require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-banner.php';
 require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-apropos.php';
 require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-reviews.php';
+require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-product-rassurance.php';
 
 /**
  * Include content modification functions
