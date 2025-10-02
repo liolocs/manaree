@@ -47,6 +47,9 @@ if ( !function_exists( 'meathouse_child_enqueue_styles' ) ):
         // Load hero section CSS
         wp_enqueue_style( 'hero-section-style', get_stylesheet_directory_uri() . '/assets/css/hero-section.css', array(), $version );
 
+        // Load banner reassurance CSS
+        wp_enqueue_style( 'banner-reassurance-style', get_stylesheet_directory_uri() . '/assets/css/banner-reassurance.css', array(), $version );
+
         // Add more modular CSS files here as needed
     }
 endif;
@@ -56,6 +59,7 @@ add_action( 'wp_enqueue_scripts', 'meathouse_child_enqueue_styles' );
  * Include customizer options
  */
 require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-hero.php';
+require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-banner.php';
 
 /**
  * Include content modification functions

@@ -1,0 +1,171 @@
+<?php
+/**
+ * Banner Reassurance Section Customizer Options
+ *
+ * @package MeatHouse Child
+ */
+
+/**
+ * Add Banner Section Customizer Options
+ */
+function meathouse_child_banner_customizer($wp_customize) {
+
+    // Add Banner Section
+    $wp_customize->add_section(
+        'meathouse_banner_section',
+        array(
+            'title' => __('Banner Reassurance', 'meathouse'),
+            'panel' => 'meathouse_custom_panel',
+            'priority' => 20,
+        )
+    );
+
+    // Enable/Disable Banner Section
+    $wp_customize->add_setting(
+        'meathouse_hs_banner',
+        array(
+            'default' => '1',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'meathouse_child_sanitize_checkbox',
+            'transport' => 'postMessage',
+        )
+    );
+    $wp_customize->add_control(
+        'meathouse_hs_banner',
+        array(
+            'label' => __('Enable Banner Section', 'meathouse'),
+            'section' => 'meathouse_banner_section',
+            'type' => 'checkbox',
+            'priority' => 1,
+        )
+    );
+
+    // Banner Items (stored as JSON)
+    $wp_customize->add_setting(
+        'meathouse_banner_items',
+        array(
+            'default' => '',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'wp_kses_post',
+        )
+    );
+
+    // Custom control for banner items
+    $wp_customize->add_control(
+        'meathouse_banner_items',
+        array(
+            'label' => __('Banner Items Configuration', 'meathouse'),
+            'description' => __('Configure banner items in JSON format. Example: [{"image":"url","title":"Title","description":"Description"}]', 'meathouse'),
+            'section' => 'meathouse_banner_section',
+            'type' => 'textarea',
+            'priority' => 2,
+        )
+    );
+
+    // Helper fields for easier item management
+    for ($i = 1; $i <= 4; $i++) {
+        // Item Image
+        $wp_customize->add_setting(
+            "meathouse_banner_item_{$i}_image",
+            array(
+                'default' => '',
+                'capability' => 'edit_theme_options',
+                'sanitize_callback' => 'meathouse_child_sanitize_url',
+            )
+        );
+        $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+                $wp_customize,
+                "meathouse_banner_item_{$i}_image",
+                array(
+                    'label' => sprintf(__('Item %d - Image', 'meathouse'), $i),
+                    'section' => 'meathouse_banner_section',
+                    'priority' => (10 + ($i * 3)),
+                )
+            )
+        );
+
+        // Item Title
+        $wp_customize->add_setting(
+            "meathouse_banner_item_{$i}_title",
+            array(
+                'default' => '',
+                'capability' => 'edit_theme_options',
+                'sanitize_callback' => 'sanitize_text_field',
+            )
+        );
+        $wp_customize->add_control(
+            "meathouse_banner_item_{$i}_title",
+            array(
+                'label' => sprintf(__('Item %d - Title', 'meathouse'), $i),
+                'section' => 'meathouse_banner_section',
+                'type' => 'text',
+                'priority' => (11 + ($i * 3)),
+            )
+        );
+
+        // Item Description
+        $wp_customize->add_setting(
+            "meathouse_banner_item_{$i}_description",
+            array(
+                'default' => '',
+                'capability' => 'edit_theme_options',
+                'sanitize_callback' => 'wp_kses_post',
+            )
+        );
+        $wp_customize->add_control(
+            "meathouse_banner_item_{$i}_description",
+            array(
+                'label' => sprintf(__('Item %d - Description', 'meathouse'), $i),
+                'section' => 'meathouse_banner_section',
+                'type' => 'textarea',
+                'priority' => (12 + ($i * 3)),
+            )
+        );
+    }
+
+    // Add selective refresh for banner section
+    if (isset($wp_customize->selective_refresh)) {
+        $wp_customize->selective_refresh->add_partial(
+            'meathouse_hs_banner',
+            array(
+                'selector' => '#banner-reassurance',
+                'container_inclusive' => true,
+                'render_callback' => function() {
+                    $template = get_stylesheet_directory() . '/template-parts/sections/section-banner.php';
+                    if (file_exists($template)) {
+                        include($template);
+                    }
+                },
+            )
+        );
+    }
+}
+
+add_action('customize_register', 'meathouse_child_banner_customizer');
+
+/**
+ * Build JSON from individual fields on customizer save
+ */
+function meathouse_child_build_banner_json($wp_customize) {
+    $items = array();
+
+    for ($i = 1; $i <= 4; $i++) {
+        $image = get_theme_mod("meathouse_banner_item_{$i}_image");
+        $title = get_theme_mod("meathouse_banner_item_{$i}_title");
+        $description = get_theme_mod("meathouse_banner_item_{$i}_description");
+
+        if (!empty($image) || !empty($title) || !empty($description)) {
+            $items[] = array(
+                'image' => $image,
+                'title' => $title,
+                'description' => $description,
+            );
+        }
+    }
+
+    if (!empty($items)) {
+        set_theme_mod('meathouse_banner_items', json_encode($items));
+    }
+}
+add_action('customize_save_after', 'meathouse_child_build_banner_json');

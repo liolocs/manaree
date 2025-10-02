@@ -49,6 +49,41 @@ function meathouse_child_inject_hero_section($content) {
 }
 
 /**
+ * Replace element with id="_banner_rassurance" with banner section template
+ *
+ * @param string $content The page content
+ * @return string Modified content
+ */
+function meathouse_child_inject_banner_section($content) {
+    // Check if element with id="_banner_rassurance" exists in content
+    if (strpos($content, 'id="_banner_rassurance"') === false && strpos($content, "id='_banner_rassurance'") === false) {
+        return $content;
+    }
+
+    // Get banner section template
+    ob_start();
+    include(get_stylesheet_directory() . '/template-parts/sections/section-banner.php');
+    $banner_html = ob_get_clean();
+
+    // Pattern to match the entire element with id="_banner_rassurance"
+    $patterns = array(
+        // Match with double quotes
+        '/<([a-zA-Z][a-zA-Z0-9]*)[^>]*id="_banner_rassurance"[^>]*>.*?<\/\1>/s',
+        // Match with single quotes
+        '/<([a-zA-Z][a-zA-Z0-9]*)[^>]*id=\'_banner_rassurance\'[^>]*>.*?<\/\1>/s',
+    );
+
+    foreach ($patterns as $pattern) {
+        if (preg_match($pattern, $content)) {
+            $content = preg_replace($pattern, $banner_html, $content);
+            break;
+        }
+    }
+
+    return $content;
+}
+
+/**
  * Main content modification function
  * Add all content modification functions here
  *
@@ -59,8 +94,10 @@ function meathouse_child_modify_page_content($content) {
     // Inject hero section
     $content = meathouse_child_inject_hero_section($content);
 
+    // Inject banner reassurance section
+    $content = meathouse_child_inject_banner_section($content);
+
     // Add more content modifications here as needed
-    // $content = meathouse_child_other_modification($content);
 
     return $content;
 }
