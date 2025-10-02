@@ -9,7 +9,6 @@ $meathouse_hs_reviews = get_theme_mod('meathouse_hs_reviews', '1');
 $meathouse_reviews_image = get_theme_mod('meathouse_reviews_image');
 $meathouse_reviews_title = get_theme_mod('meathouse_reviews_title');
 $meathouse_reviews_quotes = get_theme_mod('meathouse_reviews_quotes', '');
-$meathouse_reviews_rating = get_theme_mod('meathouse_reviews_rating', '5');
 
 if ($meathouse_hs_reviews == '1'): ?>
 <section class="banniere-reviews" id="banniere-reviews" <?php if (is_customize_preview()) { echo 'data-customize-partial-id="meathouse_reviews_section"'; } ?>>
@@ -42,25 +41,24 @@ if ($meathouse_hs_reviews == '1'): ?>
                                     <?php if (!empty($quote['quote_name'])): ?>
                                         <p class="quote-name"><?php echo esc_html($quote['quote_name']); ?></p>
                                     <?php endif; ?>
+                                    <div class="reviews-rating" aria-label="Noté 5 sur 5" role="img">
+                                        <?php for ($i = 1; $i <= 5; $i++): ?>
+                                            <div class="rating-icon filled">
+                                                <div class="icon-wrapper icon-marked">
+                                                    <i aria-hidden="true" class="eicon-star"></i>
+                                                </div>
+                                                <div class="icon-wrapper icon-unmarked">
+                                                    <i aria-hidden="true" class="eicon-star"></i>
+                                                </div>
+                                            </div>
+                                        <?php endfor; ?>
+                                    </div>
                                 </div>
                             <?php endif;
                         endforeach; ?>
                     </div>
                 <?php endif;
             } ?>
-
-            <div class="reviews-rating" aria-label="Noté <?php echo esc_attr($meathouse_reviews_rating); ?> sur 5" role="img">
-                <?php for ($i = 1; $i <= 5; $i++): ?>
-                    <div class="rating-icon <?php echo ($i <= $meathouse_reviews_rating) ? 'filled' : 'empty'; ?>">
-                        <div class="icon-wrapper icon-marked">
-                            <i aria-hidden="true" class="eicon-star"></i>
-                        </div>
-                        <div class="icon-wrapper icon-unmarked">
-                            <i aria-hidden="true" class="eicon-star"></i>
-                        </div>
-                    </div>
-                <?php endfor; ?>
-            </div>
         </div>
     </div>
 </section>

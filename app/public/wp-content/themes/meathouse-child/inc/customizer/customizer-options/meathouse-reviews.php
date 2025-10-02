@@ -82,31 +82,6 @@ function meathouse_child_reviews_customizer($wp_customize) {
         )
     );
 
-    // Rating
-    $wp_customize->add_setting(
-        'meathouse_reviews_rating',
-        array(
-            'default' => '5',
-            'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'absint',
-            'transport' => 'postMessage',
-        )
-    );
-    $wp_customize->add_control(
-        'meathouse_reviews_rating',
-        array(
-            'label' => __('Note (1-5)', 'meathouse'),
-            'section' => 'meathouse_reviews_section',
-            'type' => 'number',
-            'input_attrs' => array(
-                'min' => 1,
-                'max' => 5,
-                'step' => 1,
-            ),
-            'priority' => 4,
-        )
-    );
-
     // Quotes JSON storage
     $wp_customize->add_setting(
         'meathouse_reviews_quotes',
@@ -171,7 +146,6 @@ function meathouse_child_reviews_customizer($wp_customize) {
                     'meathouse_hs_reviews',
                     'meathouse_reviews_image',
                     'meathouse_reviews_title',
-                    'meathouse_reviews_rating',
                     'meathouse_reviews_quote_1_text',
                     'meathouse_reviews_quote_1_name',
                     'meathouse_reviews_quote_2_text',
