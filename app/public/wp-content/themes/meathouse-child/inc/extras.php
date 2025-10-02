@@ -164,76 +164,67 @@ function meathouse_child_inject_reviews_section($content)
 }
 
 /**
- * Replace element with id="_banniere_product_rassurance" with banniere product rassurance section template
- *
- * @param string $content The page content
- * @return string Modified content
+ * Enqueue JavaScript for product rassurance banner injection
+ * This approach avoids output buffering conflicts with Elementor
+ * Replaces element with id="_banniere_product_rassurance" with the banner HTML
  */
-function meathouse_child_inject_product_rassurance_section($content)
-{
-    // Check if element with id="_banniere_product_rassurance" exists in content
-    // More flexible check that allows other attributes before the id
-    if (strpos($content, '_banniere_product_rassurance') === false) {
-        error_log('OUTPUT NOT FOUND');
-        return $content;
-    }
-
-    // Build the replacement HTML directly without using ob_start()
+function meathouse_child_enqueue_product_rassurance_script() {
     // Get the theme mod values
     $meathouse_hs_product_rassurance = get_theme_mod('meathouse_hs_product_rassurance', '1');
     $meathouse_product_rassurance_items = get_theme_mod('meathouse_product_rassurance_items', '');
 
-    $product_rassurance_html = '';
+    if ($meathouse_hs_product_rassurance != '1' || empty($meathouse_product_rassurance_items)) {
+        return;
+    }
 
-    if ($meathouse_hs_product_rassurance == '1' && !empty($meathouse_product_rassurance_items)) {
-        $items = json_decode($meathouse_product_rassurance_items, true);
+    $items = json_decode($meathouse_product_rassurance_items, true);
 
-        if (!empty($items) && is_array($items)) {
-            $product_rassurance_html = '<section class="payment-banner" id="payment-banner">';
+    if (empty($items) || !is_array($items)) {
+        return;
+    }
 
-            foreach ($items as $item) {
-                if (!empty($item['image']) || !empty($item['title']) || !empty($item['subtitle'])) {
-                    $product_rassurance_html .= '<div class="payment-banner-item">';
+    // Build the HTML
+    $html = '<section class="payment-banner" id="payment-banner">';
 
-                    if (!empty($item['image'])) {
-                        $product_rassurance_html .= '<div class="payment-banner-image">';
-                        $product_rassurance_html .= '<img src="' . esc_url($item['image']) . '" alt="' . esc_attr($item['title'] ?? '') . '">';
-                        $product_rassurance_html .= '</div>';
-                    }
+    foreach ($items as $item) {
+        if (!empty($item['image']) || !empty($item['title']) || !empty($item['subtitle'])) {
+            $html .= '<div class="payment-banner-item">';
 
-                    $product_rassurance_html .= '<div class="payment-banner-content">';
-
-                    if (!empty($item['title'])) {
-                        $product_rassurance_html .= '<h3 class="payment-banner-title">' . esc_html($item['title']) . '</h3>';
-                    }
-
-                    if (!empty($item['subtitle'])) {
-                        $product_rassurance_html .= '<p class="payment-banner-subtitle">' . wp_kses_post($item['subtitle']) . '</p>';
-                    }
-
-                    $product_rassurance_html .= '</div>';
-                    $product_rassurance_html .= '</div>';
-                }
+            if (!empty($item['image'])) {
+                $html .= '<div class="payment-banner-image">';
+                $html .= '<img src="' . esc_url($item['image']) . '" alt="' . esc_attr($item['title'] ?? '') . '">';
+                $html .= '</div>';
             }
 
-            $product_rassurance_html .= '</section>';
+            $html .= '<div class="payment-banner-content">';
+
+            if (!empty($item['title'])) {
+                $html .= '<h3 class="payment-banner-title">' . esc_html($item['title']) . '</h3>';
+            }
+
+            if (!empty($item['subtitle'])) {
+                $html .= '<p class="payment-banner-subtitle">' . wp_kses_post($item['subtitle']) . '</p>';
+            }
+
+            $html .= '</div>';
+            $html .= '</div>';
         }
     }
 
-    if (empty($product_rassurance_html)) {
-        return $content;
-    }
+    $html .= '</section>';
 
-    // Pattern to match the entire element with id="_banniere_product_rassurance"
-    // Using a simpler pattern that matches the opening tag and everything until the closing tag
-    $pattern = '/<div[^>]*id=["\']_banniere_product_rassurance["\'][^>]*>.*?<\/div>/s';
-
-    if (preg_match($pattern, $content, $matches)) {
-        $content = preg_replace($pattern, $product_rassurance_html, $content);
-    }
-
-    return $content;
+    // Enqueue inline script to inject the banner
+    wp_add_inline_script( 'jquery', "
+        jQuery(document).ready(function($) {
+            // Look for element with id='_banniere_product_rassurance' and replace it
+            var targetElement = $('#_banniere_product_rassurance');
+            if (targetElement.length) {
+                targetElement.replaceWith(" . json_encode($html) . ");
+            }
+        });
+    " );
 }
+add_action( 'wp_enqueue_scripts', 'meathouse_child_enqueue_product_rassurance_script' );
 
 /**
  * Main content modification function
@@ -256,8 +247,8 @@ function meathouse_child_modify_page_content($content)
     // Inject banniere reviews section
     $content = meathouse_child_inject_reviews_section($content);
 
-    // Inject banniere product rassurance section
-    $content = meathouse_child_inject_product_rassurance_section($content);
+    // Note: Banniere product rassurance is injected via JavaScript (see meathouse_child_enqueue_product_rassurance_script)
+    // to avoid conflicts with Elementor templates
 
     // Add more content modifications here as needed
 

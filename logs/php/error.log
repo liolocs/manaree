@@ -738,3 +738,5 @@ Stack trace:
 [02-Oct-2025 19:32:41 UTC] OUTPUT NOT FOUND
 [02-Oct-2025 19:34:48 UTC] OUTPUT NOT FOUND
 [02-Oct-2025 19:39:35 UTC] OUTPUT NOT FOUND
+[02-Oct-2025 19:42:15 UTC] PHP Fatal error:  Cannot redeclare meathouse_child_enqueue_product_rassurance_script() (previously declared in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse-child/functions.php:97) in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse-child/inc/extras.php on line 171
+[02-Oct-2025 19:42:59 UTC] PHP Fatal error:  Cannot redeclare meathouse_child_enqueue_product_rassurance_script() (previously declared in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse-child/functions.php:97) in /Users/quicktweet/Local Sites/mamareefr/app/public/wp-content/themes/meathouse-child/inc/extras.php on line 171
