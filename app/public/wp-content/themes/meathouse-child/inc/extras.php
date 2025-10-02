@@ -49,7 +49,7 @@ function meathouse_child_inject_hero_section($content) {
 }
 
 /**
- * Replace element with id="_banner_rassurance" with banner section template
+ * Replace element with id="_banner_rassurance" with banniere rassurance section template
  *
  * @param string $content The page content
  * @return string Modified content
@@ -60,7 +60,7 @@ function meathouse_child_inject_banner_section($content) {
         return $content;
     }
 
-    // Get banner section template
+    // Get banniere rassurance section template
     ob_start();
     include(get_stylesheet_directory() . '/template-parts/sections/section-banner.php');
     $banner_html = ob_get_clean();
@@ -94,7 +94,7 @@ function meathouse_child_modify_page_content($content) {
     // Inject hero section
     $content = meathouse_child_inject_hero_section($content);
 
-    // Inject banner reassurance section
+    // Inject banniere rassurance section
     $content = meathouse_child_inject_banner_section($content);
 
     // Add more content modifications here as needed

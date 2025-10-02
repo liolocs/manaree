@@ -1,26 +1,26 @@
 <?php
 /**
- * Banner Reassurance Section Customizer Options
+ * Banniere Rassurance Section Customizer Options
  *
  * @package MeatHouse Child
  */
 
 /**
- * Add Banner Section Customizer Options
+ * Add Banniere Rassurance Section Customizer Options
  */
 function meathouse_child_banner_customizer($wp_customize) {
 
-    // Add Banner Section
+    // Add Banniere Rassurance Section
     $wp_customize->add_section(
         'meathouse_banner_section',
         array(
-            'title' => __('Banner Reassurance', 'meathouse'),
+            'title' => __('Banniere Rassurance', 'meathouse'),
             'panel' => 'meathouse_custom_panel',
             'priority' => 20,
         )
     );
 
-    // Enable/Disable Banner Section
+    // Enable/Disable Banniere Rassurance Section
     $wp_customize->add_setting(
         'meathouse_hs_banner',
         array(
@@ -33,7 +33,7 @@ function meathouse_child_banner_customizer($wp_customize) {
     $wp_customize->add_control(
         'meathouse_hs_banner',
         array(
-            'label' => __('Enable Banner Section', 'meathouse'),
+            'label' => __('Activer Banniere Rassurance', 'meathouse'),
             'section' => 'meathouse_banner_section',
             'type' => 'checkbox',
             'priority' => 1,
@@ -54,8 +54,8 @@ function meathouse_child_banner_customizer($wp_customize) {
     $wp_customize->add_control(
         'meathouse_banner_items',
         array(
-            'label' => __('Banner Items Configuration', 'meathouse'),
-            'description' => __('Configure banner items in JSON format. Example: [{"image":"url","title":"Title","description":"Description"}]', 'meathouse'),
+            'label' => __('Configuration des éléments', 'meathouse'),
+            'description' => __('Configurer les éléments au format JSON. Exemple: [{"image":"url","title":"Titre","description":"Description"}]', 'meathouse'),
             'section' => 'meathouse_banner_section',
             'type' => 'textarea',
             'priority' => 2,
@@ -78,7 +78,7 @@ function meathouse_child_banner_customizer($wp_customize) {
                 $wp_customize,
                 "meathouse_banner_item_{$i}_image",
                 array(
-                    'label' => sprintf(__('Item %d - Image', 'meathouse'), $i),
+                    'label' => sprintf(__('Élément %d - Image', 'meathouse'), $i),
                     'section' => 'meathouse_banner_section',
                     'priority' => (10 + ($i * 3)),
                 )
@@ -97,7 +97,7 @@ function meathouse_child_banner_customizer($wp_customize) {
         $wp_customize->add_control(
             "meathouse_banner_item_{$i}_title",
             array(
-                'label' => sprintf(__('Item %d - Title', 'meathouse'), $i),
+                'label' => sprintf(__('Élément %d - Titre', 'meathouse'), $i),
                 'section' => 'meathouse_banner_section',
                 'type' => 'text',
                 'priority' => (11 + ($i * 3)),
@@ -116,7 +116,7 @@ function meathouse_child_banner_customizer($wp_customize) {
         $wp_customize->add_control(
             "meathouse_banner_item_{$i}_description",
             array(
-                'label' => sprintf(__('Item %d - Description', 'meathouse'), $i),
+                'label' => sprintf(__('Élément %d - Description', 'meathouse'), $i),
                 'section' => 'meathouse_banner_section',
                 'type' => 'textarea',
                 'priority' => (12 + ($i * 3)),
