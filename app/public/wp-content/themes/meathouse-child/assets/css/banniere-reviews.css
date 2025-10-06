@@ -202,7 +202,6 @@
     width: 100%;
     padding: 0px;
     margin: 0;
-    background-color: #fff6ee;
   }
   .reviews-content {
     padding: 5rem;
@@ -218,6 +217,7 @@
   }
 
   #banniere-apropos + #banniere-reviews {
-    padding-top: 0;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
   }
 }

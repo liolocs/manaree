@@ -42,25 +42,25 @@ if ( !function_exists( 'meathouse_child_enqueue_styles' ) ):
         wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array(), $version );
 
         // Load header CSS
-        wp_enqueue_style( 'header-style', get_stylesheet_directory_uri() . '/assets/css/header.css', array(), $version );
+        wp_enqueue_style( 'header-style', get_stylesheet_directory_uri() . '/assets/css/header-min.css', array(), $version );
 
         // Load hero section CSS
-        wp_enqueue_style( 'hero-section-style', get_stylesheet_directory_uri() . '/assets/css/hero-section.css', array(), $version );
+        wp_enqueue_style( 'hero-section-style', get_stylesheet_directory_uri() . '/assets/css/hero-section-min.css', array(), $version );
 
         // Load banner reassurance CSS
-        wp_enqueue_style( 'banner-reassurance-style', get_stylesheet_directory_uri() . '/assets/css/banner-reassurance.css', array(), $version );
+        wp_enqueue_style( 'banner-reassurance-style', get_stylesheet_directory_uri() . '/assets/css/banner-reassurance-min.css', array(), $version );
 
         // Load banniere apropos CSS
-        wp_enqueue_style( 'banniere-apropos-style', get_stylesheet_directory_uri() . '/assets/css/banniere-apropos.css', array(), $version );
+        wp_enqueue_style( 'banniere-apropos-style', get_stylesheet_directory_uri() . '/assets/css/banniere-apropos-min.css', array(), $version );
 
         // Load banniere reviews CSS
-        wp_enqueue_style( 'banniere-reviews-style', get_stylesheet_directory_uri() . '/assets/css/banniere-reviews.css', array(), $version );
+        wp_enqueue_style( 'banniere-reviews-style', get_stylesheet_directory_uri() . '/assets/css/banniere-reviews-min.css', array(), $version );
 
         // Load footer CSS
-        wp_enqueue_style( 'footer-style', get_stylesheet_directory_uri() . '/assets/css/footer.css', array(), $version );
+        wp_enqueue_style( 'footer-style', get_stylesheet_directory_uri() . '/assets/css/footer-min.css', array(), $version );
 
         // Load banniere product rassurance CSS
-        wp_enqueue_style( 'banniere-product-rassurance-style', get_stylesheet_directory_uri() . '/assets/css/banniere-product-rassurance.css', array(), $version );
+        wp_enqueue_style( 'banniere-product-rassurance-style', get_stylesheet_directory_uri() . '/assets/css/banniere-product-rassurance-min.css', array(), $version );
 
         // Add more modular CSS files here as needed
     }
