@@ -63,47 +63,47 @@ function meathouse_child_apropos_customizer($wp_customize) {
     );
 
     // Logo
-    $wp_customize->add_setting(
-        'meathouse_apropos_logo',
-        array(
-            'default' => '',
-            'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'meathouse_child_sanitize_url',
-            'transport' => 'postMessage',
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'meathouse_apropos_logo',
-            array(
-                'label' => __('Logo', 'meathouse'),
-                'section' => 'meathouse_apropos_section',
-                'priority' => 3,
-            )
-        )
-    );
+    // $wp_customize->add_setting(
+    //     'meathouse_apropos_logo',
+    //     array(
+    //         'default' => '',
+    //         'capability' => 'edit_theme_options',
+    //         'sanitize_callback' => 'meathouse_child_sanitize_url',
+    //         'transport' => 'postMessage',
+    //     )
+    // );
+    // $wp_customize->add_control(
+    //     new WP_Customize_Image_Control(
+    //         $wp_customize,
+    //         'meathouse_apropos_logo',
+    //         array(
+    //             'label' => __('Logo', 'meathouse'),
+    //             'section' => 'meathouse_apropos_section',
+    //             'priority' => 3,
+    //         )
+    //     )
+    // );
 
     // Logo Text (circular text around logo)
-    $wp_customize->add_setting(
-        'meathouse_apropos_logo_text',
-        array(
-            'default' => '',
-            'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'wp_kses_post',
-            'transport' => 'postMessage',
-        )
-    );
-    $wp_customize->add_control(
-        'meathouse_apropos_logo_text',
-        array(
-            'label' => __('Texte circulaire du logo', 'meathouse'),
-            'description' => __('Texte qui apparaît en cercle autour du logo (séparé par • pour chaque élément)', 'meathouse'),
-            'section' => 'meathouse_apropos_section',
-            'type' => 'textarea',
-            'priority' => 4,
-        )
-    );
+    // $wp_customize->add_setting(
+    //     'meathouse_apropos_logo_text',
+    //     array(
+    //         'default' => '',
+    //         'capability' => 'edit_theme_options',
+    //         'sanitize_callback' => 'wp_kses_post',
+    //         'transport' => 'postMessage',
+    //     )
+    // );
+    // $wp_customize->add_control(
+    //     'meathouse_apropos_logo_text',
+    //     array(
+    //         'label' => __('Texte circulaire du logo', 'meathouse'),
+    //         'description' => __('Texte qui apparaît en cercle autour du logo (séparé par • pour chaque élément)', 'meathouse'),
+    //         'section' => 'meathouse_apropos_section',
+    //         'type' => 'textarea',
+    //         'priority' => 4,
+    //     )
+    // );
 
     // Title
     $wp_customize->add_setting(
@@ -155,8 +155,6 @@ function meathouse_child_apropos_customizer($wp_customize) {
                 'settings' => array(
                     'meathouse_hs_apropos',
                     'meathouse_apropos_bg_image',
-                    'meathouse_apropos_logo',
-                    'meathouse_apropos_logo_text',
                     'meathouse_apropos_title',
                     'meathouse_apropos_description',
                 ),

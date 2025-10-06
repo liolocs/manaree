@@ -40,7 +40,7 @@ function meathouse_child_banner_customizer($wp_customize) {
         )
     );
 
-    // Banner Items (stored as JSON)
+    // Banner Items (stored as JSON - hidden setting, built from individual fields)
     $wp_customize->add_setting(
         'meathouse_banner_items',
         array(
@@ -50,19 +50,7 @@ function meathouse_child_banner_customizer($wp_customize) {
         )
     );
 
-    // Custom control for banner items
-    $wp_customize->add_control(
-        'meathouse_banner_items',
-        array(
-            'label' => __('Configuration des éléments', 'meathouse'),
-            'description' => __('Configurer les éléments au format JSON. Exemple: [{"image":"url","title":"Titre","description":"Description"}]', 'meathouse'),
-            'section' => 'meathouse_banner_section',
-            'type' => 'textarea',
-            'priority' => 2,
-        )
-    );
-
-    // Helper fields for easier item management
+    // Individual fields for easier item management
     for ($i = 1; $i <= 4; $i++) {
         // Item Image
         $wp_customize->add_setting(
