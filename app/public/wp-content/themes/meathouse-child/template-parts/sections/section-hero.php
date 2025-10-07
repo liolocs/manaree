@@ -20,13 +20,15 @@ $meathouse_hero_overlay_opacity = get_theme_mod('meathouse_hero_overlay_opacity'
 if ($meathouse_hs_hero == '1'): ?>
     <section class="hero-section" id="hero-section" <?php if (is_customize_preview()) { echo 'data-customize-partial-id="meathouse_hero_section"'; } ?>>
         <div class="hero-container">
+            <?php if (!empty($meathouse_hero_image)): ?>
+                <div class="hero-background-image" style="background-image: url(<?php echo esc_url($meathouse_hero_image); ?>)">
+                </div>
+            <?php endif; ?>
+
             <?php if (!empty($meathouse_hero_video_url)): ?>
                 <video autoplay class="hero-background-video" loop muted playsinline>
                     <source src="<?php echo esc_url($meathouse_hero_video_url); ?>" type="video/mp4">
                 </video>
-            <?php elseif (!empty($meathouse_hero_image)): ?>
-                <div class="hero-background-image" style="background-image: url(<?php echo esc_url($meathouse_hero_image); ?>)">
-                </div>
             <?php endif; ?>
 
             <div class="hero-overlay"
