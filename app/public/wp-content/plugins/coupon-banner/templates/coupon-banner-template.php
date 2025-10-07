@@ -12,9 +12,9 @@ if (!defined('ABSPATH')) {
 
 $coupon_banner_enabled = get_theme_mod('coupon_banner_enabled', '1');
 $coupon_banner_text = get_theme_mod('coupon_banner_text');
-$coupon_banner_code = get_theme_mod('coupon_banner_code');
+$coupon_banner_selected_coupon = get_theme_mod('coupon_banner_selected_coupon');
 
-if ($coupon_banner_enabled == '1' && (!empty($coupon_banner_text) || !empty($coupon_banner_code))): ?>
+if ($coupon_banner_enabled == '1' && (!empty($coupon_banner_text) || !empty($coupon_banner_selected_coupon))): ?>
 <section class="coupon-banner" id="coupon-banner" data-customize-section="coupon_banner_section">
     <div class="coupon-banner-container">
         <?php if (!empty($coupon_banner_text)): ?>
@@ -23,9 +23,9 @@ if ($coupon_banner_enabled == '1' && (!empty($coupon_banner_text) || !empty($cou
             </div>
         <?php endif; ?>
 
-        <?php if (!empty($coupon_banner_code)): ?>
+        <?php if (!empty($coupon_banner_selected_coupon)): ?>
             <div class="coupon-banner-code">
-                <?php echo esc_html($coupon_banner_code); ?>
+                <?php echo esc_html($coupon_banner_selected_coupon); ?>
             </div>
         <?php endif; ?>
     </div>

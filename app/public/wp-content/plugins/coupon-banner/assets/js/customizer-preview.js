@@ -83,8 +83,8 @@
         });
     });
 
-    // Coupon Code
-    wp.customize('coupon_banner_code', function(value) {
+    // Selected Coupon (WooCommerce dropdown)
+    wp.customize('coupon_banner_selected_coupon', function(value) {
         value.bind(function(newval) {
             const code = document.querySelector('.coupon-banner-code');
 

@@ -81,9 +81,9 @@ function coupon_banner_customizer($wp_customize) {
         )
     );
 
-    // Coupon Code
+    // WooCommerce Coupon Selector
     $wp_customize->add_setting(
-        'coupon_banner_code',
+        'coupon_banner_selected_coupon',
         array(
             'default' => '',
             'capability' => 'edit_theme_options',
@@ -91,12 +91,33 @@ function coupon_banner_customizer($wp_customize) {
             'transport' => 'postMessage',
         )
     );
+
+    // Get WooCommerce coupons
+    $coupon_choices = array('' => __('Sélectionner un coupon', 'coupon-banner'));
+
+    if (class_exists('WooCommerce')) {
+        $args = array(
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
+            'post_type' => 'shop_coupon',
+            'post_status' => 'publish',
+        );
+        $coupons = get_posts($args);
+
+        foreach ($coupons as $coupon) {
+            $coupon_choices[$coupon->post_title] = $coupon->post_title;
+        }
+    }
+
     $wp_customize->add_control(
-        'coupon_banner_code',
+        'coupon_banner_selected_coupon',
         array(
-            'label' => __('Code du coupon', 'coupon-banner'),
+            'label' => __('Sélectionner un coupon WooCommerce', 'coupon-banner'),
+            'description' => __('Choisissez un coupon depuis votre boutique WooCommerce', 'coupon-banner'),
             'section' => 'coupon_banner_section',
-            'type' => 'text',
+            'type' => 'select',
+            'choices' => $coupon_choices,
             'priority' => 3,
         )
     );
