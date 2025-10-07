@@ -41,9 +41,6 @@ if ( !function_exists( 'meathouse_child_enqueue_styles' ) ):
         // Load the child theme stylesheet
         wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array(), $version );
 
-        // Load coupon banner CSS (high priority - appears at top of page)
-        wp_enqueue_style( 'coupon-banner-style', get_stylesheet_directory_uri() . '/assets/css/coupon-banner.css', array(), $version );
-
         // Load header CSS
         wp_enqueue_style( 'header-style', get_stylesheet_directory_uri() . '/assets/css/header-min.css', array(), $version );
 
@@ -73,7 +70,6 @@ add_action( 'wp_enqueue_scripts', 'meathouse_child_enqueue_styles' );
 /**
  * Include customizer options
  */
-require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-coupon-banner.php';
 require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-hero.php';
 require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-banner.php';
 require get_stylesheet_directory() . '/inc/customizer/customizer-options/meathouse-apropos.php';

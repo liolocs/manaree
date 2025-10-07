@@ -11,22 +11,6 @@
 global $meathouse_child_rendered_templates;
 $meathouse_child_rendered_templates = array();
 
-/**
- * Inject coupon banner at the very beginning of content
- * This should run first to place the banner at the top of the page
- *
- * @param string $content The page content
- * @return string Modified content with coupon banner prepended
- */
-function meathouse_child_inject_coupon_banner($content) {
-    // Get coupon banner template
-    ob_start();
-    include(get_stylesheet_directory() . '/template-parts/sections/section-coupon-banner.php');
-    $coupon_banner_html = ob_get_clean();
-
-    // Prepend coupon banner to content
-    return $coupon_banner_html . $content;
-}
 
 /**
  * Replace element with id="_section-hero" with hero section template
@@ -252,9 +236,6 @@ add_action( 'wp_enqueue_scripts', 'meathouse_child_enqueue_product_rassurance_sc
  */
 function meathouse_child_modify_page_content($content)
 {
-    // Inject coupon banner at the top (before all other content)
-    $content = meathouse_child_inject_coupon_banner($content);
-
     // Inject hero section
     $content = meathouse_child_inject_hero_section($content);
 
