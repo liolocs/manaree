@@ -149,29 +149,22 @@ function coupon_banner_customizer($wp_customize) {
         )
     );
 
-    // Add selective refresh for coupon banner
-    if (isset($wp_customize->selective_refresh)) {
-        $wp_customize->selective_refresh->add_partial(
-            'coupon_banner_section',
-            array(
-                'selector' => '#coupon-banner',
-                'container_inclusive' => true,
-                'settings' => array(
-                    'coupon_banner_enabled',
-                    'coupon_banner_text',
-                    'coupon_banner_code',
-                    'coupon_banner_bg_color',
-                    'coupon_banner_height',
-                ),
-                'render_callback' => function() {
-                    $template = COUPON_BANNER_PLUGIN_DIR . 'templates/coupon-banner-template.php';
-                    if (file_exists($template)) {
-                        include($template);
-                    }
-                },
-            )
-        );
-    }
+    // Note: Selective refresh is not used because it conflicts with live preview
+    // All updates are handled via JavaScript in customizer-preview.js
 }
 
 add_action('customize_register', 'coupon_banner_customizer');
+
+/**
+ * Enqueue customizer preview script
+ */
+function coupon_banner_customizer_preview_scripts() {
+    wp_enqueue_script(
+        'coupon-banner-customizer-preview',
+        COUPON_BANNER_PLUGIN_URL . 'assets/js/customizer-preview.js',
+        array('jquery', 'customize-preview'),
+        COUPON_BANNER_VERSION,
+        true
+    );
+}
+add_action('customize_preview_init', 'coupon_banner_customizer_preview_scripts');

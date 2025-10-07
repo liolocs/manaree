@@ -15,7 +15,7 @@ $coupon_banner_text = get_theme_mod('coupon_banner_text');
 $coupon_banner_code = get_theme_mod('coupon_banner_code');
 
 if ($coupon_banner_enabled == '1' && (!empty($coupon_banner_text) || !empty($coupon_banner_code))): ?>
-<section class="coupon-banner" id="coupon-banner">
+<section class="coupon-banner" id="coupon-banner" data-customize-section="coupon_banner_section">
     <div class="coupon-banner-container">
         <?php if (!empty($coupon_banner_text)): ?>
             <div class="coupon-banner-text">
