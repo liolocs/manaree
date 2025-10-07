@@ -27,7 +27,7 @@ define('COUPON_BANNER_PLUGIN_URL', plugin_dir_url(__FILE__));
 function coupon_banner_enqueue_styles() {
     wp_enqueue_style(
         'coupon-banner-style',
-        COUPON_BANNER_PLUGIN_URL . 'assets/css/coupon-banner.css',
+        COUPON_BANNER_PLUGIN_URL . 'assets/css/coupon-banner-min.css',
         array(),
         COUPON_BANNER_VERSION
     );
