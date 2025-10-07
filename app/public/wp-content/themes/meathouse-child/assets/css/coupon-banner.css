@@ -1,0 +1,75 @@
+/* Coupon Banner Section */
+.coupon-banner {
+    width: 100%;
+    background-color: var(--bs-primary, var(--main, #0d354f));
+    padding: 1em 2em;
+    position: relative;
+    z-index: 999;
+}
+
+.coupon-banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+
+.coupon-banner-text {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.coupon-banner-code {
+    color: var(--bs-primary, var(--main, #0d354f));
+    background-color: #ffffff;
+    padding: 0.5em 1.5em;
+    border: 2px dashed var(--bs-primary, var(--main, #0d354f));
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.coupon-banner-code:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .coupon-banner {
+        padding: 0.8em 1em;
+    }
+
+    .coupon-banner-container {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .coupon-banner-text {
+        font-size: 1rem;
+    }
+
+    .coupon-banner-code {
+        font-size: 1.1rem;
+        padding: 0.4em 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .coupon-banner-text {
+        font-size: 0.9rem;
+    }
+
+    .coupon-banner-code {
+        font-size: 1rem;
+    }
+}
