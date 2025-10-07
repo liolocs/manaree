@@ -1,0 +1,49 @@
+/**
+ * Customizer Preview Styles
+ * Styles for edit button in customizer preview
+ */
+
+.customize-partial-edit-shortcut {
+  position: relative;
+}
+
+.coupon-banner-edit-shortcut-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  line-height: 1 !important;
+  font-size: 18px;
+  z-index: 99999;
+  background: #3582c4 !important;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 1px rgba(60, 67, 74, 0.15);
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 3px;
+  animation-fill-mode: both;
+  animation-duration: 0.4s;
+  text-shadow: 0 -1px 1px #135e96, 1px 0 1px #135e96, 0 1px 1px #135e96,
+    -1px 0 1px #135e96;
+}
+
+.coupon-banner-edit-shortcut-button:hover {
+  background: #005177;
+  transform: scale(1.1);
+}
+
+.coupon-banner-edit-shortcut-button svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+.coupon-banner-edit-shortcut-button:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}

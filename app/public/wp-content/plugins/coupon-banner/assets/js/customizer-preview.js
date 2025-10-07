@@ -106,33 +106,52 @@
         });
     });
 
-    // Add edit button functionality using customizer shortcut links
-    wp.customize.preview.bind('ready', function() {
+    // Add persistent edit button in customizer
+    // Simply try to add the button once DOM is ready
+    // The customizer preview script loads after this, so just add it directly
+    (function initializeEditButton() {
+        // Check if we're in the customizer preview
+        if (typeof wp !== 'undefined' &&
+            typeof wp.customize !== 'undefined' &&
+            typeof wp.customize.preview !== 'undefined') {
+            // We're in customizer, add button
+            addEditButton();
+        } else {
+            // Not in customizer yet, wait a bit
+            setTimeout(initializeEditButton, 100);
+        }
+    })();
+
+    function addEditButton() {
         const banner = document.getElementById('coupon-banner');
 
-        if (banner && typeof wp.customize.preview !== 'undefined') {
-            // Add shortcut link data attribute to enable edit button
-            banner.setAttribute('data-customize-partial-placement-context', JSON.stringify({
-                'sidebar_id': '',
-                'widget_id': '',
-                'widget_number': ''
-            }));
+        if (banner) {
+            // Don't add button twice
+            if (banner.querySelector('.coupon-banner-edit-shortcut-button')) {
+                return;
+            }
 
-            // Create a custom click handler for the banner
-            banner.addEventListener('click', function(e) {
-                if (wp.customize.preview.clicked) {
-                    wp.customize.preview.clicked(e);
+            // Create edit button
+            const editButton = document.createElement('button');
+            editButton.setAttribute('aria-label', 'Cliquez pour modifier cet élément.');
+            editButton.setAttribute('title', 'Cliquez pour modifier cet élément.');
+            editButton.className = 'coupon-banner-edit-shortcut-button';
+            editButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13.89 3.39l2.71 2.72c.46.46.42 1.24.03 1.64l-8.01 8.02-5.56 1.16 1.16-5.58s7.6-7.63 7.99-8.03c.39-.39 1.22-.39 1.68.07zm-2.73 2.79l-5.59 5.61 1.11 1.11 5.54-5.65zm-2.97 8.23l5.58-5.6-1.07-1.08-5.59 5.6z"></path></svg>';
+
+            // Add click handler to open customizer section
+            editButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Send message to parent customizer to open the section
+                if (typeof wp !== 'undefined' && typeof wp.customize !== 'undefined' && typeof wp.customize.preview !== 'undefined') {
+                    wp.customize.preview.send('focus-control-for-setting', 'coupon_banner_text');
                 }
             });
 
-            // Register the shortcut
-            wp.customize.preview.bind('ready', function() {
-                wp.customize.preview.trigger('edit-shortcut-visibility', {
-                    selector: '#coupon-banner',
-                    context: 'coupon_banner_section'
-                });
-            });
+            // Append button to banner
+            banner.appendChild(editButton);
         }
-    });
+    }
 
 })();

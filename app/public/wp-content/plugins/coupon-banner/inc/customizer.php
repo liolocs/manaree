@@ -156,9 +156,16 @@ function coupon_banner_customizer($wp_customize) {
 add_action('customize_register', 'coupon_banner_customizer');
 
 /**
- * Enqueue customizer preview script
+ * Enqueue customizer preview script and styles
  */
 function coupon_banner_customizer_preview_scripts() {
+    wp_enqueue_style(
+        'coupon-banner-customizer-preview-style',
+        COUPON_BANNER_PLUGIN_URL . 'assets/css/customizer-preview.css',
+        array(),
+        COUPON_BANNER_VERSION
+    );
+
     wp_enqueue_script(
         'coupon-banner-customizer-preview',
         COUPON_BANNER_PLUGIN_URL . 'assets/js/customizer-preview.js',
