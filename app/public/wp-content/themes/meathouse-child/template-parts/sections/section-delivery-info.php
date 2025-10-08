@@ -6,21 +6,40 @@
  */
 
 $meathouse_hs_delivery_info = get_theme_mod('meathouse_hs_delivery_info', '1');
-$meathouse_delivery_info_title = get_theme_mod('meathouse_delivery_info_title');
-$meathouse_delivery_info_text = get_theme_mod('meathouse_delivery_info_text');
+$meathouse_delivery_info_bg_color = get_theme_mod('meathouse_delivery_info_bg_color', '#FFF5E6');
+$meathouse_delivery_info_text_color = get_theme_mod('meathouse_delivery_info_text_color', '#333333');
 
-if ($meathouse_hs_delivery_info == '1' && (!empty($meathouse_delivery_info_title) || !empty($meathouse_delivery_info_text))): ?>
-<div class="delivery-info-section" id="delivery-info">
-    <?php if (!empty($meathouse_delivery_info_title)): ?>
-        <h3 class="delivery-info-title">
-            <?php echo esc_html($meathouse_delivery_info_title); ?>
-        </h3>
-    <?php endif; ?>
+// Check if section is enabled
+if ($meathouse_hs_delivery_info != '1') {
+    return;
+}
 
-    <?php if (!empty($meathouse_delivery_info_text)): ?>
-        <div class="delivery-info-text">
-            <?php echo wp_kses_post($meathouse_delivery_info_text); ?>
+// Collect all items
+$has_content = false;
+$items = array();
+
+for ($i = 1; $i <= 6; $i++) {
+    $text = get_theme_mod("meathouse_delivery_info_item_{$i}_text");
+    if (!empty($text)) {
+        $items[] = array(
+            'text' => $text,
+            'color' => get_theme_mod("meathouse_delivery_info_item_{$i}_color"),
+            'bold' => get_theme_mod("meathouse_delivery_info_item_{$i}_bold"),
+        );
+        $has_content = true;
+    }
+}
+
+// Only render if there's at least one item
+if (!$has_content) {
+    return;
+}
+?>
+
+<div class="delivery-info-section" id="delivery-info" style="background-color: <?php echo esc_attr($meathouse_delivery_info_bg_color); ?>; color: <?php echo esc_attr($meathouse_delivery_info_text_color); ?>;">
+    <?php foreach ($items as $item): ?>
+        <div class="delivery-info-item<?php echo $item['bold'] == '1' ? ' is-bold' : ''; ?>"<?php if (!empty($item['color'])): ?> style="color: <?php echo esc_attr($item['color']); ?>;"<?php endif; ?>>
+            <?php echo meathouse_parse_delivery_text($item['text']); ?>
         </div>
-    <?php endif; ?>
+    <?php endforeach; ?>
 </div>
-<?php endif; ?>

@@ -228,6 +228,48 @@ function meathouse_child_enqueue_product_rassurance_script() {
 add_action( 'wp_enqueue_scripts', 'meathouse_child_enqueue_product_rassurance_script' );
 
 /**
+ * Parse delivery info text with custom markdown-style syntax
+ * Supports: **bold**, [color=#hex]text[/color], emojis, line breaks
+ *
+ * @param string $text The text to parse
+ * @return string Parsed HTML
+ */
+function meathouse_parse_delivery_text($text) {
+    if (empty($text)) {
+        return '';
+    }
+
+    // Convert **text** to <strong>
+    $text = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $text);
+
+    // Convert [color=#hex]text[/color] to span with inline style
+    $text = preg_replace('/\[color=(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})\](.*?)\[\/color\]/i', '<span style="color:$1">$2</span>', $text);
+
+    // Preserve line breaks
+    $text = nl2br($text);
+
+    return $text;
+}
+
+/**
+ * Inject delivery information before checkout button on cart page
+ * Uses woocommerce_proceed_to_checkout hook with priority 5 to run before the checkout button
+ */
+function meathouse_child_inject_delivery_info() {
+    // Only show on cart page
+    if (!is_cart()) {
+        return;
+    }
+
+    // Get delivery info template
+    $template = get_stylesheet_directory() . '/template-parts/sections/section-delivery-info.php';
+    if (file_exists($template)) {
+        include($template);
+    }
+}
+add_action( 'woocommerce_proceed_to_checkout', 'meathouse_child_inject_delivery_info', 5 );
+
+/**
  * Main content modification function
  * Add all content modification functions here
  *
