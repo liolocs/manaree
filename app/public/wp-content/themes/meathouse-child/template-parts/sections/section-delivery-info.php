@@ -24,7 +24,6 @@ for ($i = 1; $i <= 6; $i++) {
         $items[] = array(
             'text' => $text,
             'color' => get_theme_mod("meathouse_delivery_info_item_{$i}_color"),
-            'bold' => get_theme_mod("meathouse_delivery_info_item_{$i}_bold"),
         );
         $has_content = true;
     }
@@ -38,7 +37,7 @@ if (!$has_content) {
 
 <div class="delivery-info-section" id="delivery-info" style="background-color: <?php echo esc_attr($meathouse_delivery_info_bg_color); ?>; color: <?php echo esc_attr($meathouse_delivery_info_text_color); ?>;">
     <?php foreach ($items as $item): ?>
-        <div class="delivery-info-item<?php echo $item['bold'] == '1' ? ' is-bold' : ''; ?>"<?php if (!empty($item['color'])): ?> style="color: <?php echo esc_attr($item['color']); ?>;"<?php endif; ?>>
+        <div class="delivery-info-item"<?php if (!empty($item['color'])): ?> style="color: <?php echo esc_attr($item['color']); ?>;"<?php endif; ?>>
             <?php echo meathouse_parse_delivery_text($item['text']); ?>
         </div>
     <?php endforeach; ?>

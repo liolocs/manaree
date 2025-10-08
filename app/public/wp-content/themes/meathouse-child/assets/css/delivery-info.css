@@ -19,11 +19,6 @@
     margin-bottom: 0;
 }
 
-/* Bold styling when bold toggle is enabled */
-.delivery-info-item.is-bold {
-    font-weight: 700;
-}
-
 /* Support for emojis/icons at the start of items */
 .delivery-info-item::first-line {
     line-height: 1.8;

@@ -135,30 +135,9 @@ function meathouse_child_delivery_info_customizer($wp_customize) {
             )
         );
 
-        // Item Bold Toggle
-        $wp_customize->add_setting(
-            "meathouse_delivery_info_item_{$i}_bold",
-            array(
-                'default' => '',
-                'capability' => 'edit_theme_options',
-                'sanitize_callback' => 'meathouse_child_sanitize_checkbox',
-                'transport' => 'postMessage',
-            )
-        );
-        $wp_customize->add_control(
-            "meathouse_delivery_info_item_{$i}_bold",
-            array(
-                'label' => sprintf(__('Item %d - Texte en gras', 'meathouse'), $i),
-                'section' => 'meathouse_delivery_info_section',
-                'type' => 'checkbox',
-                'priority' => 12 + ($i * 10),
-            )
-        );
-
         // Add to selective refresh settings array
         $selective_refresh_settings[] = "meathouse_delivery_info_item_{$i}_text";
         $selective_refresh_settings[] = "meathouse_delivery_info_item_{$i}_color";
-        $selective_refresh_settings[] = "meathouse_delivery_info_item_{$i}_bold";
     }
 
     // Add selective refresh for delivery info section
