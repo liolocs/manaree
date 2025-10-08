@@ -11,6 +11,10 @@
   position: absolute;
 }
 
+#front-sub-header.is-sticky {
+  background-color: #0C344C !important;
+}
+
 #maison-depuis {
   border-left: 4px solid var(--e-global-color-primary);
   padding-left: 15px;

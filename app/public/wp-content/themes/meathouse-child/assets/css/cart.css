@@ -1,0 +1,19 @@
+/* Cart Page Styles */
+
+.cart-collaterals .cart_totals h4 {
+  display: none !important;
+}
+.cart-collaterals .cart_totals table {
+  display: none !important;
+}
+.cart-collaterals .cart_totals .wc-proceed-to-checkout .checkout-button {
+  padding: 0.5em 2em !important;
+  height: auto !important;
+  width: 100% !important;
+  border-radius: 5px !important;
+  background-color: #e58327 !important;
+}
+
+.cart-collaterals .cart_totals .wc-proceed-to-checkout .checkout-button br {
+  display: none !important;
+}

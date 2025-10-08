@@ -11,3 +11,13 @@
 [01-Oct-2025 17:49:20] NOTICE: fpm is running, pid 81643
 [01-Oct-2025 17:49:20] NOTICE: ready to handle connections
 [02-Oct-2025 12:12:05] WARNING: [pool www] child 81649 said into stderr: "sh: gs: command not found"
+[07-Oct-2025 13:23:38] NOTICE: Terminating ...
+[07-Oct-2025 13:23:38] NOTICE: Terminating ...
+[07-Oct-2025 13:23:38] NOTICE: exiting, bye-bye!
+[07-Oct-2025 17:34:17] NOTICE: fpm is running, pid 14007
+[07-Oct-2025 17:34:17] NOTICE: ready to handle connections
+[07-Oct-2025 19:12:07] NOTICE: Terminating ...
+[07-Oct-2025 19:12:07] NOTICE: Terminating ...
+[07-Oct-2025 19:12:07] NOTICE: exiting, bye-bye!
+[07-Oct-2025 19:48:17] NOTICE: fpm is running, pid 59008
+[07-Oct-2025 19:48:17] NOTICE: ready to handle connections

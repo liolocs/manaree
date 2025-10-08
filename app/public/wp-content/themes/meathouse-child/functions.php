@@ -62,6 +62,9 @@ if ( !function_exists( 'meathouse_child_enqueue_styles' ) ):
         // Load banniere product rassurance CSS
         wp_enqueue_style( 'banniere-product-rassurance-style', get_stylesheet_directory_uri() . '/assets/css/banniere-product-rassurance-min.css', array(), $version );
 
+        // Load cart page CSS
+        wp_enqueue_style( 'cart-style', get_stylesheet_directory_uri() . '/assets/css/cart.css', array(), $version );
+
         // Add more modular CSS files here as needed
     }
 endif;

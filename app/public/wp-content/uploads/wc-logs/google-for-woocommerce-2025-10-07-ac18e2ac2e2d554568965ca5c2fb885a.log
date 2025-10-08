@@ -21,3 +21,7 @@
 }
 2025-10-07T08:19:51+00:00 DEBUG Automattic\WooCommerce\GoogleListingsAndAds\MerchantCenter\PriceBenchmarks::update_price_benchmarks Unable to retrieve price benchmark data
 2025-10-07T09:49:20+00:00 DEBUG Automattic\WooCommerce\GoogleListingsAndAds\Coupon\CouponHelper::get_channel_visibility Channel visibility forced to "dont-sync-and-show" for visibility unknown (Post ID: 13567).
+2025-10-07T14:54:35+00:00 ERROR Automattic\WooCommerce\GoogleListingsAndAds\Internal\DependencyManagement\GoogleServiceProvider::handle_unauthorized_error Client error: `POST https://api.woocommerce.com/google/google-ads/v20/customers/5289799452/googleAds:search` resulted in a `401 Unauthorized` response:
+{"statusCode":401,"error":{"message":"Invalid credentials"},"message":"Invalid credentials","attributes":{"error":"Inval (truncated...)
+2025-10-07T14:54:39+00:00 ERROR Automattic\WooCommerce\GoogleListingsAndAds\Internal\DependencyManagement\GoogleServiceProvider::handle_unauthorized_error Client error: `POST https://api.woocommerce.com/google/google-ads/v20/customers/5289799452/googleAds:search` resulted in a `401 Unauthorized` response:
+{"statusCode":401,"error":{"message":"Invalid credentials"},"message":"Invalid credentials","attributes":{"error":"Inval (truncated...)
